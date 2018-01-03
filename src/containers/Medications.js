@@ -1,22 +1,24 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { fetchMedications } from '../actions/medications';
 
 class Medications extends Component {
-	
-	constructor(props) {
-		super(props)
 
-		this.state = {
-			medications: []
-		}
-	}
-
+	//componentDidMount() {
+	//	this.props.fetchMedications()
+	//}
 
 	render() {
 		return (
 			<div>
 				<h3>Medications</h3>
-			</div>
+				{this.props.medications.map(medication => 
+					<div>
+						<p>Name: {medication.name} <button>More Info</button></p>
+					</div>
 
+				)}
+			</div>
 		)
 	}
 }
