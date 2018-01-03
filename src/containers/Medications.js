@@ -1,12 +1,25 @@
-import React from 'react';
-import Medication from '../components/Medication';
+import React, { Component } from 'react';
 
-const Medications = (props) => (
-	<div>
-		<h3>Medications</h3>
-			{props.medications.map(medication => <Medication key={medication.id} medication={medication} /> )}
-	</div>
-)
+class Medications extends Component {
+	
+	constructor(props) {
+		super(props)
+
+		this.state = {
+			medications: []
+		}
+	}
+
+
+	render() {
+		return (
+			<div>
+				<h3>Medications</h3>
+			</div>
+
+		)
+	}
+}
 
 export default Medications;
 
