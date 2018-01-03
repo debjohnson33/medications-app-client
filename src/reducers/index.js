@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-// import all reducers here
+import medicationsReducer from './medicationsReducer';
 
 export default combineReducers({
-	// list reducer names here
+	medications: medicationsReducer
 });
