@@ -1,11 +1,16 @@
-import { createStore } from 'redux'
-import rootReducer from './reducers/index'
+import { createStore, applyMiddleware, combineReducers } from 'redux';
+import thunk from 'redux-thunk';
+import medicationsReducers from './reducers/medicationsReducers';
 
-export function configureStore(){
-  return createStore(
-    rootReducer, 
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+const reducers = combineReducers({
+	medicationsReducers
+});
+const middleware = [thunk];
+
+export default createStore(
+    reducers, 
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+	applyMiddleware(...middleware),    
   );
-}
 
-export const store = configureStore()
+
