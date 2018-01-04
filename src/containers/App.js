@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './App.css';
 import Medications from './Medications';
@@ -23,12 +24,18 @@ const medications = [
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to the Medications App!</h1>
-        </header>
-        <Medications medications={medications} />
-      </div>
+    	<Router>
+	      <div className="App">
+	      	<Switch>
+	      		<Route exact path='/' component={Home}/>
+	      		<Route exact path='/medications' component={medications}/>
+	        <header className="App-header">
+	          <h1 className="App-title">Welcome to the Medications App!</h1>
+	        </header>
+	        <Medications medications={medications} />
+	      </div>
+	      </Switch>
+	    </Router>
     );
   }
 }
