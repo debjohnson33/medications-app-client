@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { connect } from 'react-redux';
+import Medications from './Medications'
 import './App.css';
-import Medications from './Medications';
 
 const medications = [
 	{
@@ -28,20 +27,12 @@ class App extends Component {
 	      <div className="App">
 	      	<Switch>
 	      		<Route exact path='/' component={Home}/>
-	      		<Route exact path='/medications' component={medications}/>
-	        <header className="App-header">
-	          <h1 className="App-title">Welcome to the Medications App!</h1>
-	        </header>
-	        <Medications medications={medications} />
+	      		<Route exact path='/medications' component={Medications}/>
+	      	</Switch>
 	      </div>
-	      </Switch>
 	    </Router>
     );
   }
 }
 
-const mapStateToProps = (state) => {
-	return { medications: state.medications };
-};
-
-export default connect(mapStateToProps)(App);
+export default App;
