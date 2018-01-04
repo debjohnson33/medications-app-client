@@ -4,9 +4,9 @@ import { fetchMedications } from '../actions/medications';
 
 class Medications extends Component {
 
-	//componentDidMount() {
-	//	this.props.fetchMedications()
-	//}
+	componentDidMount() {
+		this.props.fetchMedications()
+	}
 
 	render() {
 		return (
@@ -23,6 +23,10 @@ class Medications extends Component {
 	}
 }
 
-export default Medications;
+const mapStateToProps = (state) => {
+	return ({
+		medications: state.medications,
+	})
+}
 
-
+export default connect(mapStateToProps, {fetchMedications})(Medications);
