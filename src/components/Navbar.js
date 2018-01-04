@@ -22,7 +22,7 @@ const Navbar = () =>
 		to='/medications'
 		exact
 		style={link}
-		>Teams</NavLink>
+		>Medications</NavLink>
 	</div>
 
 export default Navbar;
