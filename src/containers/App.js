@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import './App.css';
 import Medications from './Medications';
 
@@ -32,4 +33,8 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+	return { medications: state.medications };
+};
+
+export default connect(mapStateToProps)(App);
