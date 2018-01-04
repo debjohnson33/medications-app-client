@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Medications from './Medications'
-import Home from '../components/Home'
+import Medications from './Medications';
+import Home from '../components/Home';
+import Navbar from '../components/Navbar';
 import './App.css';
 
 const medications = [
@@ -26,6 +27,7 @@ class App extends Component {
     return (
     	<Router>
 	      <div className="App">
+	      	<Navbar />
 	      	<Switch>
 	      		<Route exact path='/' component={Home}/>
 	      		<Route exact path='/medications' component={Medications}/>
