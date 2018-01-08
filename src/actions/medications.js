@@ -5,8 +5,8 @@ const setMedications = medications => {
 	return {
 		type: 'FETCH_MEDICATIONS',
 		medications
-	}
-}
+	};
+};
 
 export const fetchMedications = () => {
 	return dispatch => {
@@ -14,5 +14,5 @@ export const fetchMedications = () => {
 			.then(response => response.json())
 			.then(medications => dispatch(setMedications(medications)))
 			.catch(error => console.log(error));
-	}
-}
+	};
+};
