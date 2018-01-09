@@ -7,7 +7,6 @@ class Medications extends Component {
 
 	componentDidMount() {
 		const { medications, actions } = this.props;
-		
 		if (medications.length === 0) {
 			actions.fetchMedications();
 		}
