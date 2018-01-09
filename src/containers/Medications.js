@@ -6,9 +6,9 @@ import * as actions from '../actions/medications';
 class Medications extends Component {
 
 	componentDidMount() {
-		const { medications, actions } = this.props;
-		if (medications.length === 0) {
-			actions.fetchMedications();
+		if (this.props.medications.length === 0) {
+			console.log('component did mount');
+			this.props.actions.fetchMedications();
 		}
 	}
 
