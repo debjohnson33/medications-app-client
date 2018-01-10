@@ -7,7 +7,6 @@ import MedicationsList from '../components/MedicationsList';
 class Medications extends Component {
 
 	componentDidMount() {
-		console.log("component mounted")
 		this.props.fetchMedications();
 	}
 
