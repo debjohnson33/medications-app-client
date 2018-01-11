@@ -33,6 +33,8 @@ class Medications extends Component {
 const mapStateToProps = (state) => {
 	return ({
 		medications: state.medications,
+		hasErrored: state.medicationsHasErrored,
+		isLoading: state.itemsIsLoading
 	});
 };
 
