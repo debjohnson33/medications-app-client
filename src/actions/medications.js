@@ -24,6 +24,7 @@ export function medicationsFetchDataSuccess(medications) {
 
 export const fetchMedications = () => {
 	return dispatch => {
+		dispatch(medicationsIsLoading(true));
 		return fetch(`${API_URL}/medications`, {
 			method: 'GET',
 			headers: {
@@ -31,6 +32,13 @@ export const fetchMedications = () => {
 				'Content-Type': 'application/json'
 			}
 		})
+			.then(response => {
+				if (!response.ok) {
+					throw Error(response.statusText);
+				}
+				dispatch(medicationsIsLoading(false));
+				return response;
+			})
 			.then(response => response.json())
 			.then(medications => {dispatch(medicationsFetchDataSuccess(medications));
 			})

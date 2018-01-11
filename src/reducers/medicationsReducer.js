@@ -18,7 +18,7 @@ export function medicationsIsLoading(state = false, action) {
 
 export default (state = [], action) => {
 	switch (action.type) {
-		case 'FETCH_MEDICATIONS':
+		case 'MEDICATIONS_FETCH_DATA_SUCCESS':
 			return action.medications;
 		case 'ADD_MEDICATION':
 			return state.concat(action.medication)
