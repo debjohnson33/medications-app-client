@@ -1,3 +1,21 @@
+export function medicationsHasErrored(state = false, action) {
+	switch (action.type) {
+		case 'MEDICATIONS_HAS_ERRORED':
+			return action.hasErrored;
+		default:
+			return state;
+	}
+}
+
+export function medicationsIsLoading(state = false, action) {
+	switch (action.type) {
+		case 'MEDICATIONS_IS_LOADING':
+			return action.isLoading;
+		default:
+			return state;
+	}
+}
+
 export default (state = [], action) => {
 	switch (action.type) {
 		case 'FETCH_MEDICATIONS':

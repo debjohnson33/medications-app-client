@@ -1,17 +1,26 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchMedications } from '../actions/medications';
+import * as actions from '../actions/medications';
 import MedicationsList from '../components/MedicationsList';
 
 class Medications extends Component {
 
 	componentDidMount() {
-		this.props.fetchMedications();
+		if (this.props.medications.length === 0) {
+			console.log('component did mount')
+			this.props.actions.fetchMedications();
+		}
 	}
 
 	render() {
 		const { medications } = this.props;
+		if (this.props.hasErrored) {
+			return <p>Sorry, there was an error loading the medications</p>;
+		}
+		if (this.props.isLoading) {
+			return <p>Loading medications...</p>
+		}
 		return (
 			<div>
 				<h3>Medications</h3>
@@ -27,4 +36,8 @@ const mapStateToProps = (state) => {
 	});
 };
 
-export default connect(mapStateToProps, { fetchMedications })(Medications);
+const mapDispatchToProps = (dispatch) => {
+	return ({actions: bindActionCreators(actions, dispatch)})
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Medications);
