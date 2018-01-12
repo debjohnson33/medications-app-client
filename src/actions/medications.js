@@ -24,10 +24,12 @@ export function medicationsFetchDataSuccess(medications) {
 
 export const fetchMedications = () => {
 	return dispatch => {
+		dispatch(medicationsIsLoading(true));
 		return fetch(`${API_URL}/medications`)
 			.then(response => response.json())
 			.then(medications => {
 				dispatch(medicationsFetchDataSuccess(medications),
+				dispatch(medicationsIsLoading(false))
 			);
 			})
 			.catch(() => dispatch(medicationsHasErrored(true)));
