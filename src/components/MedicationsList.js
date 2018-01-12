@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 const MedicationsList = ({ medications }) => {
@@ -18,11 +17,5 @@ const MedicationsList = ({ medications }) => {
 	);
 };
 
-const mapStateToProps = state => {
-	return {
-		medications: state.medications
-	};
-}
-
-export default connect(mapStateToProps)(MedicationsList);
+export default MedicationsList;
 
