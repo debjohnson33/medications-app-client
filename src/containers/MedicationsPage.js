@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import * as actions from '../actions/medications';
 import MedicationsList from '../components/MedicationsList';
 
-class Medications extends Component {
+class MedicationsPage extends Component {
 
 	componentDidMount() {
 		if (this.props.medications.length === 0) {
@@ -49,4 +49,4 @@ const mapDispatchToProps = (dispatch) => {
 	return ({actions: bindActionCreators(actions, dispatch)})
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Medications);
+export default connect(mapStateToProps, mapDispatchToProps)(MedicationsPage);
