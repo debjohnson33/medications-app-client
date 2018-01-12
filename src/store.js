@@ -1,9 +1,11 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
-import medicationsReducer from './reducers/medicationsReducer';
+import medicationsReducer, { medicationsHasErrored, medicationsIsLoading } from './reducers/medicationsReducer';
 
 const reducers = combineReducers({
-	medications: medicationsReducer
+	medications: medicationsReducer,
+	medicationsHasErrored: medicationsHasErrored,
+	medicationsIsLoading: medicationsIsLoading
 });
 const middleware = [thunk];
 
