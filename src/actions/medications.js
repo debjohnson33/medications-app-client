@@ -31,10 +31,7 @@ export const fetchMedications = () => {
 				dispatch(medicationsFetchDataSuccess(medications),
 				dispatch(medicationsIsLoading(false))
 			);
-			
-			
 			})
 			.catch(() => dispatch(medicationsHasErrored(true)));
-			//	return response;
 	};
 };

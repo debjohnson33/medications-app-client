@@ -14,16 +14,23 @@ class Medications extends Component {
 	}
 
 	render() {
-		const { medications, hasErrored } = this.props;
+		const { medications } = this.props;
+		let userMessage;
+
+		if (this.props.hasErrored) {
+			userMessage = (
+				<div><p>Sorry, there was an error loading the medications</p></div>
+			)
+		} 
+		if (this.props.isLoading) {
+			userMessage = (
+				<div><p>Loading medications...</p></div>
+			)
+		}
 		return (
 			<div>
-				{
-					hasErrored ? 
-					<div><p>Sorry, there was an error loading the medications</p></div>
-					:
-					<div><p>Loading medications...</p></div>
-				}
 				<h3>Medications</h3>
+				{userMessage}
 				<MedicationsList medications={medications}/>
 			</div>
 		)
