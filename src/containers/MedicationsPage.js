@@ -14,8 +14,8 @@ class MedicationsPage extends Component {
 	}
 
 	render() {
-		const { medications, hasErrored, isLoading } = this.props;
-		let userMessage;
+		const { medications } = this.props;
+		/* let userMessage;
 		if (this.props.hasErrored) {
 			userMessage = (
 				<div><p>Sorry, there was an error loading the medications</p></div>
@@ -25,11 +25,12 @@ class MedicationsPage extends Component {
 			userMessage = (
 				<div><p>Loading medications...</p></div>
 			)
-		}
+		}*/
+		debugger; 
 		return (
 			<div>
 				<h3>Medications</h3>
-				{userMessage}
+				
 				<MedicationsList medications={medications}/>
 			</div>
 		)
