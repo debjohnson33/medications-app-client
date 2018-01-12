@@ -14,7 +14,7 @@ class MedicationsPage extends Component {
 	}
 
 	render() {
-		const { medications } = this.props;
+		const { medications, hasErrored, isLoading } = this.props;
 		let userMessage;
 
 		if (this.props.hasErrored) {
@@ -40,8 +40,8 @@ class MedicationsPage extends Component {
 const mapStateToProps = (state) => {
 	return ({
 		medications: state.medications,
-		hasErrored: state.medicationsHasErrored,
-		isLoading: state.itemsIsLoading
+		hasErrored: state.hasErrored,
+		isLoading: state.isLoading
 	});
 };
 
