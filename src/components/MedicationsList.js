@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 const MedicationsList = ({ medications }) => (
 	<div>
+	
 		{medications.map(medication =>
 			<Link 
 				to={`/medications/${medication.id}`}

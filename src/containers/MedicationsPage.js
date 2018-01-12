@@ -30,7 +30,7 @@ class MedicationsPage extends Component {
 		return (
 			<div>
 				<h3>Medications</h3>
-				
+			
 				<MedicationsList medications={medications}/>
 			</div>
 		)
