@@ -26,7 +26,7 @@ class MedicationsPage extends Component {
 				<div><p>Loading medications...</p></div>
 			)
 		}*/
-		debugger; 
+		
 		return (
 			<div>
 				<h3>Medications</h3>
