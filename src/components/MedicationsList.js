@@ -3,13 +3,12 @@ import { Link } from 'react-router-dom';
 
 const MedicationsList = ({ medications }) => (
 	<div>
-	
-		{medications.map(medication =>
-			<Link 
-				to={`/medications/${medication.id}`}
-				key={medication.id} 
-			>{medication.name}
-			</Link>
+		{medications.map(medication => 
+			<p><Link 
+				to={`/medications/${medication.id}`} 
+				key={medication.id}
+			>Name: {medication.name}
+			</Link></p>
 		)}
 	</div>
 );

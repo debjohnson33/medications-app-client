@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchMedications } from '../actions/medications';
-import Medication from '../components/Medication';
+import MedicationsList from '../components/MedicationsList';
 
 class MedicationsPage extends Component {
 
@@ -16,8 +16,7 @@ class MedicationsPage extends Component {
 		return (
 			<div>
 				<h3>Medications</h3>
-				{this.props.medications.map(medication => 
-					<Medication key={medication.id} medication={medication} />)}
+				<MedicationsList medications={this.props.medications} />
 			</div>
 		)
 	}
