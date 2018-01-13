@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { fetchMedications } from '../actions/medications';
-//import MedicationsList from '../components/MedicationsList';
+import Medication from '../components/Medication';
 
 class MedicationsPage extends Component {
 
@@ -14,23 +13,11 @@ class MedicationsPage extends Component {
 	}
 
 	render() {
-		const { medications } = this.props;
-
 		return (
 			<div>
 				<h3>Medications</h3>
-				<div>
-				
-					{medications.map(medication =>
-						<Link 
-							to={`/medications/${medication.id}`}
-							key={medication.id} 
-						>{medication.name}
-						</Link>
-					)}
-				</div>
-			
-				
+				{this.props.medications.map(medication => 
+					<Medication key={medication.id} medication={medication} />)}
 			</div>
 		)
 	}
