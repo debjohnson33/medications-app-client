@@ -3,9 +3,7 @@ import thunk from 'redux-thunk';
 import medicationsReducer, { medicationsHasErrored, medicationsIsLoading } from './reducers/medicationsReducer';
 
 const reducers = combineReducers({
-	medications: medicationsReducer,
-	medicationsHasErrored: medicationsHasErrored,
-	medicationsIsLoading: medicationsIsLoading
+	medications: medicationsReducer
 });
 const middleware = [thunk];
 

@@ -14,23 +14,12 @@ class MedicationsPage extends Component {
 	}
 
 	render() {
-		const { medications } = this.props;
-		/* let userMessage;
-		if (this.props.hasErrored) {
-			userMessage = (
-				<div><p>Sorry, there was an error loading the medications</p></div>
-			)
-		} 
-		if (this.props.isLoading) {
-			userMessage = (
-				<div><p>Loading medications...</p></div>
-			)
-		}*/
+		const { medications, loading } = this.props;
 		
 		return (
 			<div>
 				<h3>Medications</h3>
-			
+				
 				<MedicationsList medications={medications}/>
 			</div>
 		)
@@ -40,8 +29,7 @@ class MedicationsPage extends Component {
 const mapStateToProps = (state) => {
 	return ({
 		medications: state.medications,
-		hasErrored: state.hasErrored,
-		isLoading: state.isLoading
+		loading: state.loading
 	});
 };
 

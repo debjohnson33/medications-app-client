@@ -1,25 +1,10 @@
-export function medicationsHasErrored(state = false, action) {
-	switch (action.type) {
-		case 'MEDICATIONS_HAS_ERRORED':
-			return action.hasErrored;
-		default:
-			return state;
-	}
-}
-
-export function medicationsIsLoading(state = false, action) {
-	switch (action.type) {
-		case 'MEDICATIONS_IS_LOADING':
-			return action.isLoading;
-		default:
-			return state;
-	}
-}
-
-export default (state = [], action) => {
+export default (state = {loading: false, medications: []}, action) => {
 	switch (action.type) {
 		case 'MEDICATIONS_FETCH_DATA_SUCCESS':
-			return action.medications;
+			return Object.assign({}, state, {loading: false, medications: state.medications.concat(action.listings)});
+		
+		case 'LOADING':
+			return Object.assign({}, state, {loading: true}); 
 		case 'ADD_MEDICATION':
 			return state.concat(action.medication)
 		default:
