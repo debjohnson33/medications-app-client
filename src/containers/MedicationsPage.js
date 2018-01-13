@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { bindActionCreators } from 'redux';
 import { fetchMedications } from '../actions/medications';
-import MedicationsList from '../components/MedicationsList';
+//import MedicationsList from '../components/MedicationsList';
 
 class MedicationsPage extends Component {
 
@@ -16,7 +15,7 @@ class MedicationsPage extends Component {
 
 	render() {
 		const { medications } = this.props;
-		
+
 		return (
 			<div>
 				<h3>Medications</h3>
