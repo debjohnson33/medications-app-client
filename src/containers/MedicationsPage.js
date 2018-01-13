@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
-import * as actions from '../actions/medications';
+import { fetchMedications } from '../actions/medications';
 import MedicationsList from '../components/MedicationsList';
 
 class MedicationsPage extends Component {
@@ -9,7 +10,7 @@ class MedicationsPage extends Component {
 	componentDidMount() {
 		if (this.props.medications.length === 0) {
 			console.log('component did mount')
-			this.props.actions.fetchMedications();
+			this.props.fetchMedications();
 		}
 	}
 
@@ -19,8 +20,18 @@ class MedicationsPage extends Component {
 		return (
 			<div>
 				<h3>Medications</h3>
+				<div>
 				
-				<MedicationsList medications={medications}/>
+					{medications.map(medication =>
+						<Link 
+							to={`/medications/${medication.id}`}
+							key={medication.id} 
+						>{medication.name}
+						</Link>
+					)}
+				</div>
+			
+				
 			</div>
 		)
 	}
@@ -32,8 +43,8 @@ const mapStateToProps = (state) => {
 	});
 };
 
-const mapDispatchToProps = (dispatch) => {
-	return ({actions: bindActionCreators(actions, dispatch)})
-}
+///const mapDispatchToProps = (dispatch) => {
+//	return ({actions: bindActionCreators(actions, dispatch)})
+//}
 
-export default connect(mapStateToProps, mapDispatchToProps)(MedicationsPage);
+export default connect(mapStateToProps, { fetchMedications })(MedicationsPage);
