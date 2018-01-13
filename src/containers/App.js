@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { fetchMedications } from '../actions/medications';
 
 import MedicationsPage from './MedicationsPage';
 import Medication from '../components/Medication';
@@ -9,6 +11,14 @@ import './App.css';
 
 
 class App extends Component {
+
+	componentDidMount() {
+		if (this.props.medications.length === 0) {
+			console.log('component did mount')
+			this.props.fetchMedications();
+		}
+	}
+
   render() {
     return (
     	<Router>
@@ -17,7 +27,7 @@ class App extends Component {
 	      	<Switch>
 	      		<Route exact path='/' component={Home}/>
 	      		<Route exact path='/medications' component={MedicationsPage}/>
-	      		<Route exact path='/medications/:id' render={() => <Medication {...props}/>}/>
+	      		<Route exact path='/medications/:id' component={Medication}/>
 	      	</Switch>
 	      </div>
 	    </Router>
@@ -25,4 +35,10 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+	return ({
+		medications: state.medications
+	});
+};
+
+export default connect(mapStateToProps, { fetchMedications })(App);
