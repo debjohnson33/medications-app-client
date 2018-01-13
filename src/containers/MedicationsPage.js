@@ -14,7 +14,7 @@ class MedicationsPage extends Component {
 	}
 
 	render() {
-		const { medications, loading } = this.props;
+		const { medications } = this.props;
 		
 		return (
 			<div>
@@ -28,8 +28,7 @@ class MedicationsPage extends Component {
 
 const mapStateToProps = (state) => {
 	return ({
-		medications: state.medications,
-		loading: state.loading
+		medications: state.medications
 	});
 };
 
