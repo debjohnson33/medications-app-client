@@ -13,8 +13,7 @@ export const fetchMedications = () => {
 		return fetch(`${API_URL}/medications`)
 			.then(response => response.json())
 			.then(medications => {
-				dispatch(medicationsFetchDataSuccess(medications),
-			);
+				dispatch(medicationsFetchDataSuccess(medications));
 			})
 			.catch(error => console.log(error));
 	};
