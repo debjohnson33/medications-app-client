@@ -10,7 +10,6 @@ export function medicationsFetchDataSuccess(medications) {
 
 export const fetchMedications = () => {
 	return dispatch => {
-		dispatch({type: 'LOADING'});
 		return fetch(`${API_URL}/medications`)
 			.then(response => response.json())
 			.then(medications => {

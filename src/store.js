@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
-import medicationsReducer, { medicationsHasErrored, medicationsIsLoading } from './reducers/medicationsReducer';
+import medicationsReducer from './reducers/medicationsReducer';
 
 const reducers = combineReducers({
 	medications: medicationsReducer
