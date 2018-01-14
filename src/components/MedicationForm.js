@@ -14,13 +14,15 @@ class MedicationForm extends Component {
 	}
 
 	handleOnSubmit = event => {
-		event.preventDefault()
-		this.props.createMedication(this.props.medicationFormData)
+		event.preventDefault();
+		const { createMedication, medicationFormData, history } = this.props;
+		createMedication(medicationFormData, history);
 	}
 
 	render() {
 
 		const { name, generic_name, uses, side_effects, precautions } = this.props.medicationFormData;
+		
 		return (
 			<div>
 			<h4>Add a Medication to the List</h4>
@@ -38,12 +40,12 @@ class MedicationForm extends Component {
 
 				<div>
 					<label htmlFor='uses'>Uses:</label>
-					<input type='text' uses='uses' value={uses} />
+					<input type='textarea' uses='uses' value={uses} />
 				</div>
 
 				<div>
 					<label htmlFor='side_effects'>Side Effects:</label>
-					<input type='text' side_effects='side_effects' value={side_effects} />
+					<input type='textarea' side_effects='side_effects' value={side_effects} />
 				</div>
 
 				<div>

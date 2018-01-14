@@ -43,7 +43,7 @@ export const createMedication = (medication, history) => {
 			.then(medication => {
 				dispatch(addMedication(medication))
 				dispatch(resetMedicationForm())
-				hisory.push('/medications')
+				history.push('/medications')
 			})
 			.cath(error => console.log(error))
 	}	
