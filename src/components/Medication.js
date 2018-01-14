@@ -22,6 +22,9 @@ class Medication extends Component {
 			<div>
 				<p>Name: {medication.name}</p>
 				<p>Generic Name: {medication.generic_name}</p>
+				<p>Uses: {medication.uses}</p>
+				<p>Side Effects: {medication.uses}</p>
+				<p>Precautions: {medication.precautions}</p>
 			</div>
 		)
 	}
