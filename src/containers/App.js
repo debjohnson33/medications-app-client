@@ -6,6 +6,7 @@ import Medication from '../components/Medication';
 import Home from '../components/Home';
 import Navbar from '../components/Navbar';
 import './App.css';
+import MedicationForm from '../components/MedicationForm';
 
 
 class App extends Component {
@@ -18,6 +19,7 @@ class App extends Component {
 	      	<Switch>
 	      		<Route exact path='/' component={Home}/>
 	      		<Route exact path='/medications' component={MedicationsPage}/>
+	      		<Route exact path='/medications/new' component={MedicationForm}/>
 	      		<Route exact path='/medications/:id' component={Medication}/>
 	      	</Switch>
 	      </div>
