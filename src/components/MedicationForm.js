@@ -30,27 +30,27 @@ class MedicationForm extends Component {
 			<form>
 				<div>
 					<label htmlFor='name'>Name:</label>
-					<input type='text' name='name' value={name} />
+					<input type='text' value={name} />
 				</div>
 
 				<div>
 					<label htmlFor='generic_name'>Generic Name:</label>
-					<input type='text' generic_name='generic_name' value={generic_name} />
+					<input type='text' value={generic_name} />
 				</div>
 
 				<div>
 					<label htmlFor='uses'>Uses:</label>
-					<input type='textarea' uses='uses' value={uses} />
+					<input type='textarea' value={uses} />
 				</div>
 
 				<div>
 					<label htmlFor='side_effects'>Side Effects:</label>
-					<input type='textarea' side_effects='side_effects' value={side_effects} />
+					<input type='textarea' value={side_effects} />
 				</div>
 
 				<div>
 					<label htmlFor='precautions'>Precautions:</label>
-					<input type='text' precautions='precautions' value={precautions} />
+					<input type='text' value={precautions} />
 				</div>
 				<button type="submit">Add Medication</button>
 			</form>
