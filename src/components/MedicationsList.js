@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 const MedicationsList = ({ medications }) => (
 	<div>
 		{medications.map(medication => 
-			<p><Link 
+			<p>Name: <Link 
 				to={`/medications/${medication.id}`} 
 				key={medication.id}
-			>Name: {medication.name}
+			>{medication.name}
 			</Link></p>
 		)}
 	</div>

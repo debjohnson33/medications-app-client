@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { fetchMedications} from '../actions/medications';
+import Reviews from './Reviews';
 
 class Medication extends Component {
 
@@ -25,6 +26,7 @@ class Medication extends Component {
 							<p>Uses: {medication.uses}</p>
 							<p>Side Effects: {medication.uses}</p>
 							<p>Precautions: {medication.precautions}</p>
+							<Reviews reviews={medication.reviews}/>
 						</div>
 					)
 				})
