@@ -63,4 +63,7 @@ const mapStateToProps = state => {
 	}
 }
  
-export default connect(mapStateToProps, {updateMedicationFormData, createMedication})(MedicationForm);
+export default connect(mapStateToProps, {
+	updateMedicationFormData, 
+	createMedication
+})(MedicationForm);
