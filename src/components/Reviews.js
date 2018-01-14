@@ -4,7 +4,7 @@ const Reviews = ({ reviews }) => (
 	<div>
 		{reviews.map(review => 
 			<div>
-				<h3>Review(s):</h3>
+				<p>Review:</p>
 				<p>Rating: {review.rating}</p>
 				<p>Comment: {review.comment}</p>
 			</div>
