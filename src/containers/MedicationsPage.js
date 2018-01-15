@@ -17,8 +17,8 @@ class MedicationsPage extends Component {
 	render() {
 		return (
 			<div>
-				<h3>Medications</h3>
 				<MedicationForm />
+				<h3>Medications</h3>
 				<MedicationsList medications={this.props.medications} />
 			</div>
 		)

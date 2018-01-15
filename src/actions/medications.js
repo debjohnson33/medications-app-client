@@ -13,7 +13,7 @@ export const medicationsFetchDataSuccess = medications => {
 export const addMedication = medication => {
 	return {
 		type: 'CREATE_MEDICATION_SUCCESS',
-		medication
+		medication: medication
 	}
 }
 
@@ -43,7 +43,7 @@ export const createMedication = (medication, history) => {
 			.then(medication => {
 				dispatch(addMedication(medication))
 				dispatch(resetMedicationForm())
-				history.push('/medications')
+				//history.push('/medications')
 			})
 			.cath(error => console.log(error))
 	}	
