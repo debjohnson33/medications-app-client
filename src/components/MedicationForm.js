@@ -15,8 +15,8 @@ class MedicationForm extends Component {
 
 	handleOnSubmit = event => {
 		event.preventDefault();
-		const { createMedication, medicationFormData, history } = this.props;
-		createMedication(medicationFormData, history);
+		const { createMedication, medicationFormData} = this.props;
+		createMedication(medicationFormData);
 	}
 
 	render() {

@@ -1,5 +1,5 @@
 import fetch from 'isomorphic-fetch';
-import { updateMedicationFormData, resetMedicationForm } from './medicationForm';
+import { resetMedicationForm } from './medicationForm';
 
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -30,7 +30,7 @@ export const fetchMedications = () => {
 	};
 };
 
-export const createMedication = (medication, history) => {
+export const createMedication = (medication) => {
 	return dispatch => {
 		return fetch(`${API_URL}/medications`, {
 			method: 'POST',

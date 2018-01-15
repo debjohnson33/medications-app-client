@@ -18,9 +18,9 @@ class App extends Component {
 	      	<Navbar />
 	      	<Switch>
 	      		<Route exact path='/' component={Home}/>
-	      		<Route exact path='/medications' component={MedicationsPage}/>
 	      		<Route exact path='/medications/new' component={MedicationForm}/>
 	      		<Route exact path='/medications/:id' component={Medication}/>
+	      		<Route exact path='/medications' component={MedicationsPage}/>
 	      	</Switch>
 	      </div>
 	    </Router>
