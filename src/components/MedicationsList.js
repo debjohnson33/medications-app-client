@@ -5,8 +5,8 @@ const MedicationsList = ({ medications }) => (
 	<div>
 		{medications.map(medication => 
 			<p>Name: <Link 
-				to={`/medications/${medication.id}`} 
 				key={medication.id}
+				to={`/medications/${medication.id}`} 
 			>{medication.name}
 			</Link></p>
 		)}
