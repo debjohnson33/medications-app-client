@@ -17,6 +17,13 @@ export const addMedication = medication => {
 	}
 }
 
+export const updateMedication = medicationFormData => {
+	return {
+		type: 'UPDATE_MEDICATION_SUCCESS',
+		medicationFormData
+	}
+}
+
 
 
 export const fetchMedications = () => {
@@ -47,4 +54,21 @@ export const createMedication = (medication) => {
 			})
 			.catch(error => console.log(error))
 	}	
+}
+
+export const editMedication = (medicationId, medication) => {
+	return dispatch => {
+		return fetch(`${API_URL}/medications/${medicationId}`, {
+			method: 'PATCH',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({ medication: medication })
+		})
+			.then(response => response.json())
+			.then(medication => {
+				dispatch(updateMedication(medication))
+			})
+			.catch(error => console.log(error))
+	}
 }

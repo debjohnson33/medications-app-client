@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { updateMedicationFormData } from '../actions/medicationForm';
-import { fetchMedications } from '../actions/medications';
+import { fetchMedications, editMedication } from '../actions/medications';
 
 class MedicationEditForm extends Component {
 
