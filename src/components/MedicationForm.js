@@ -4,7 +4,7 @@ import { updateMedicationFormData } from '../actions/medicationForm';
 import { createMedication } from '../actions/medications';
 
 class MedicationForm extends Component {
-
+	
 	handleOnChange = event => {
 		const { name, value } = event.target;
 		const currentMedicationFormData = Object.assign({}, this.props.medicationFormData, {
