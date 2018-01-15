@@ -12,7 +12,7 @@ export const medicationsFetchDataSuccess = medications => {
 
 export const addMedication = medication => {
 	return {
-		type: 'CREATE_MEDICATION_SUCCESS',
+		type: 'ADD_MEDICATION_SUCCESS',
 		medication: medication
 	}
 }
