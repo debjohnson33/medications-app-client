@@ -45,6 +45,6 @@ export const createMedication = (medication) => {
 				dispatch(resetMedicationForm())
 				//history.push('/medications')
 			})
-			.cath(error => console.log(error))
+			.catch(error => console.log(error))
 	}	
 }

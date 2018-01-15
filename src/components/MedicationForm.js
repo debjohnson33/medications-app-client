@@ -26,7 +26,7 @@ class MedicationForm extends Component {
 			<div>
 			<h4>Add a Medication to the List</h4>
 
-			<form>
+			<form onSubmit={this.handleOnSubmit}>
 				<div>
 					<label htmlFor='name'>Name:</label>
 					<input 
