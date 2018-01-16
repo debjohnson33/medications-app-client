@@ -34,7 +34,8 @@ class Medication extends Component {
 							<p>Uses: {medication.uses}</p>
 							<p>Side Effects: {medication.uses}</p>
 							<p>Precautions: {medication.precautions}</p>
-							<button onClick={this.handleOnDelete}>Delete Medication</button>
+							<button onClick={this.handleOnDelete}>Delete Medication</button><br /><br />
+							<p>Add a Review:</p>
 							<ReviewForm />
 							<h3>Reviews:</h3>
 							<Reviews reviews={medication.reviews}/>

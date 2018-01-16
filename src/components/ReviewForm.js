@@ -14,7 +14,10 @@ class ReviewForm extends Component {
 		return (
 			<div>
 				<form>
-					<input type='text' comment={comment} />
+					<label htmlFor='Comment'>Comment:</label>
+					<input type='text' comment={comment} /><br /><br />
+					
+					<button type="submit">Add Review</button>
 				</form>
 			</div>
 		)
