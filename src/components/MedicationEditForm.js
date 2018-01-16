@@ -46,7 +46,9 @@ class MedicationEditForm extends Component {
 						type='text'
 						onChange={this.handleOnChange}
 						name='name' 
-						value={name} />
+						value={name} 
+						placeholder={name}
+					/>
 				</div>
 
 				<div>
