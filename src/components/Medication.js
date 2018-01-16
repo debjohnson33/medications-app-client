@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import { fetchMedications, deleteMedication } from '../actions/medications';
 import Reviews from './Reviews';
+import ReviewForm from './ReviewForm';
 
 class Medication extends Component {
 
@@ -34,6 +35,7 @@ class Medication extends Component {
 							<p>Side Effects: {medication.uses}</p>
 							<p>Precautions: {medication.precautions}</p>
 							<button onClick={this.handleOnDelete}>Delete Medication</button>
+							<ReviewForm />
 							<h3>Reviews:</h3>
 							<Reviews reviews={medication.reviews}/>
 						</div>

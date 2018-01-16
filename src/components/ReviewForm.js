@@ -9,10 +9,12 @@ class ReviewForm extends Component {
 
 	render() {
 
+		const { rating, comment } = this.props.reviewFormData;
+
 		return (
 			<div>
 				<form>
-					
+					<input type='text' comment={comment} />
 				</form>
 			</div>
 		)
