@@ -14,6 +14,7 @@ class MedicationEditForm extends Component {
 		const currentMedication = this.props.match.params.id
 		const medicationFormData = allMedications.filter(allMedication => allMedication.id === currentMedication)
 		this.props.updateMedicationFormData(medicationFormData)
+		console.log(medicationFormData)
 	}
 
 	handleOnChange = event => {
