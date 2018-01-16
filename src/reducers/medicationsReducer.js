@@ -4,15 +4,9 @@ export default (state = [], action) => {
 			return action.medications;
 		case 'ADD_MEDICATION_SUCCESS':
 			return state.concat(action.medication)
-		case 'UPDATE_MEDICATION_SUCCESS':
-			const newMedicationState = state.map(medication => {
-				if (medication.id === action.medicationId) {
-					return Object.assign({}, medication, {medication: medication})
-				} else {
-					return medication
-				}
-			})
-			return newMedicationState;
+		case 'DELETE_MEDICATION_SUCCESS':
+			state.splice(action.medicationId, 1)
+			return state;
 		default:
 			return state;
 	}

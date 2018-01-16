@@ -17,14 +17,12 @@ export const addMedication = medication => {
 	}
 }
 
-export const updateMedication = medicationFormData => {
+export const destroyMedication = medicationId => {
 	return {
-		type: 'UPDATE_MEDICATION_SUCCESS',
-		medicationFormData
+		type: 'DELETE_MEDICATION_SUCCESS',
+		medicationId
 	}
 }
-
-
 
 export const fetchMedications = () => {
 	return dispatch => {
@@ -56,18 +54,14 @@ export const createMedication = (medication) => {
 	}	
 }
 
-export const editMedication = (medicationId, medication) => {
+export const deleteMedication = (medicationId) => {
 	return dispatch => {
 		return fetch(`${API_URL}/medications/${medicationId}`, {
-			method: 'PATCH',
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({ medication: medication })
+			method: 'DELETE',
 		})
 			.then(response => response.json())
 			.then(medication => {
-				dispatch(updateMedication(medication))
+				dispatch(destroyMedication(medicationId))
 			})
 			.catch(error => console.log(error))
 	}
