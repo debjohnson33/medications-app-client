@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-//import Select from 'react-select';
 
 import { updateReviewFormData } from '../actions/reviewForm';
 import { createReview } from '../actions/reviews';
@@ -17,23 +16,37 @@ class ReviewForm extends Component {
 
 	render() {
 
-		const options = ['1', '2', '3', '4', '5'];
 		const { rating, comment } = this.props.reviewFormData;
 
 		return (
 			<div>
 				<form>
-					<label htmlFor='rating'>Select Rating: 1 highest, 5 lowest</label>
-					<select
-						value={options}
-						onChange={this.handleRatingSelect}
-						placeholder="Select a Rating">
-						{options}
-					</select><br /><br />
+					<label htmlFor='rating'>Rating (1 lowest, 5 highest):</label>
+					<label>
+						<input type="radio" value="1" checked={true} />
+						1
+					</label>
+					<label>
+						<input type="radio" value="2"  />
+						2
+					</label>
+					<label>
+						<input type="radio" value="3"  />
+						3
+					</label>
+					<label>
+						<input type="radio" value="4"  />
+						4
+					</label>
+					<label>
+						<input type="radio" value="5"  />
+						5
+					</label>
+					<br /><br />
 					<label htmlFor='Comment'>Comment:</label>
 					<input type='text' comment={comment} /><br /><br />
 					
-					<button type="submit">Add Review</button>
+					<button type="submit">Submit Review</button>
 				</form>
 			</div>
 		)
