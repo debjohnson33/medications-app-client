@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 
-import { fetchMedications} from '../actions/medications';
+import { fetchMedications, deleteMedication } from '../actions/medications';
 import Reviews from './Reviews';
 
 class Medication extends Component {
@@ -12,6 +11,13 @@ class Medication extends Component {
 			console.log('component did mount')
 			this.props.fetchMedications();
 		}
+	}
+
+	handleOnDelete = event => {
+		event.preventDefault();
+		const medicationId = this.props.match.params.id;
+		this.props.deleteMedication(medicationId);
+		this.props.history.push('/medications');
 	}
 
 	render() {
@@ -27,7 +33,7 @@ class Medication extends Component {
 							<p>Uses: {medication.uses}</p>
 							<p>Side Effects: {medication.uses}</p>
 							<p>Precautions: {medication.precautions}</p>
-							<button>Delete Medication</button>
+							<button onClick={this.handleOnDelete}>Delete Medication</button>
 							<h3>Reviews:</h3>
 							<Reviews reviews={medication.reviews}/>
 						</div>
@@ -50,4 +56,4 @@ const mapStateToProps = (state) => {
 	});
 };
 
-export default connect(mapStateToProps, {fetchMedications})(Medication);
+export default connect(mapStateToProps, {fetchMedications, deleteMedication })(Medication);
