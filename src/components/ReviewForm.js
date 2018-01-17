@@ -23,23 +23,23 @@ class ReviewForm extends Component {
 				<form>
 					<label htmlFor='rating'>Rating (1 lowest, 5 highest):</label>
 					<label>
-						<input type="radio" value="1" checked={true} />
+						<input name='rating' 'type="radio" value="1" checked={true} />
 						1
 					</label>
 					<label>
-						<input type="radio" value="2"  />
+						<input name='rating' type="radio" value="2"  />
 						2
 					</label>
 					<label>
-						<input type="radio" value="3"  />
+						<input name='rating' type="radio" value="3"  />
 						3
 					</label>
 					<label>
-						<input type="radio" value="4"  />
+						<input name='rating' type="radio" value="4"  />
 						4
 					</label>
 					<label>
-						<input type="radio" value="5"  />
+						<input name='rating' type="radio" value="5"  />
 						5
 					</label>
 					<br /><br />
