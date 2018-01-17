@@ -5,15 +5,25 @@ import { updateReviewFormData } from '../actions/reviewForm';
 import { createReview } from '../actions/reviews';
 
 class ReviewForm extends Component {
+	constructor() {
+		super();
+		this.state = {
+			selectedOption: 'option5'
+		}
+	}
 
-	handleRatingSelect = event => {
-		const { value } = event.target
-		const currentReviewFormData = Object.assign({}, this.props.reviewFormData, {
-			rating: value
+	handleOptionChange = event => {
+		this.setState({
+			selectedOption: event.target.value
 		})
-		this.props.updateReviewFormData(currentReviewFormData)
 	};
 
+		//const { value } = event.target
+		//const currentReviewFormData = Object.assign({}, this.props.reviewFormData, {
+		//	rating: value
+		//})
+		//this.props.updateReviewFormData(currentReviewFormData)
+	
 	render() {
 
 		const { rating, comment } = this.props.reviewFormData;
@@ -23,23 +33,53 @@ class ReviewForm extends Component {
 				<form>
 					<label htmlFor='rating'>Rating (1 lowest, 5 highest):</label>
 					<label>
-						<input name='rating' 'type="radio" value="1" checked={true} />
+						<input 
+							name='rating' 
+							type="radio" 
+							value="option1" 
+							checked={this.selectedOption === 'option1'} 
+							onChange={this.handleOptionChange}
+						/>
 						1
 					</label>
 					<label>
-						<input name='rating' type="radio" value="2"  />
+						<input 
+							name='rating' 
+							type="radio" 
+							value="option2" 
+							checked={this.selectedOption === 'option2'} 
+							onChange={this.handleOptionChange}
+						/>
 						2
 					</label>
 					<label>
-						<input name='rating' type="radio" value="3"  />
+						<input 
+							name='rating' 
+							type="radio" 
+							value="option3" 
+							checked={this.selectedOption === 'option3'} 
+							onChange={this.handleOptionChange}
+						/>
 						3
 					</label>
 					<label>
-						<input name='rating' type="radio" value="4"  />
+						<input 
+							name='rating' 
+							type="radio" 
+							value="option4" 
+							checked={this.selectedOption === 'option4'} 
+							onChange={this.handleOptionChange}
+						/>
 						4
 					</label>
 					<label>
-						<input name='rating' type="radio" value="5"  />
+						<input 
+							name='rating' 
+							type="radio" 
+							value="option5" 
+							checked={this.selectedOption === 'option5'} 
+							onChange={this.handleOptionChange}
+						/>
 						5
 					</label>
 					<br /><br />
