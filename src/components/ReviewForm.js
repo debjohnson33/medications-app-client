@@ -18,11 +18,17 @@ class ReviewForm extends Component {
 		})
 	};
 
-		//const { value } = event.target
-		//const currentReviewFormData = Object.assign({}, this.props.reviewFormData, {
-		//	rating: value
-		//})
-		//this.props.updateReviewFormData(currentReviewFormData)
+	handleOnSubmit = event => {
+		event.preventDefault();
+
+		const currentReviewFormData = Object.assign({}, this.props.reviewFormData, {
+			rating: this.state.selectedOption,
+			comment: this.props.reviewFormData.comment
+		})
+		this.props.updateReviewFormData(currentReviewFormData)
+		console.log(this.state.selectedOption);
+		console.log(this.props.reviewFormData.comment);
+	}
 	
 	render() {
 
@@ -30,7 +36,7 @@ class ReviewForm extends Component {
 
 		return (
 			<div>
-				<form>
+				<form onSubmit={this.handleOnSubmit} >
 					<label htmlFor='rating'>Rating (1 lowest, 5 highest):</label>
 					<label>
 						<input 

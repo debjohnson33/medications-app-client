@@ -1,6 +1,6 @@
 export const updateReviewFormData = reviewFormData => {
 	return {
-		type: 'UPDATED_DATA',
+		type: 'UPDATED_REVIEW_DATA',
 		reviewFormData
 	}
 }
