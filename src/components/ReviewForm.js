@@ -44,7 +44,7 @@ class ReviewForm extends Component {
 					</label>
 					<br /><br />
 					<label htmlFor='Comment'>Comment:</label>
-					<input type='text' comment={comment} /><br /><br />
+					<input type='textarea' comment={comment} /><br /><br />
 					
 					<button type="submit">Submit Review</button>
 				</form>
