@@ -39,8 +39,7 @@ class ReviewForm extends Component {
 				<form onSubmit={this.handleOnSubmit} >
 					<label htmlFor='rating'>Rating (1 lowest, 5 highest):</label>
 					<label>
-						<input 
-							name='rating' 
+						<input  
 							type="radio" 
 							value="option1" 
 							checked={this.selectedOption === 'option1'} 
@@ -49,8 +48,7 @@ class ReviewForm extends Component {
 						1
 					</label>
 					<label>
-						<input 
-							name='rating' 
+						<input  
 							type="radio" 
 							value="option2" 
 							checked={this.selectedOption === 'option2'} 
@@ -59,8 +57,7 @@ class ReviewForm extends Component {
 						2
 					</label>
 					<label>
-						<input 
-							name='rating' 
+						<input  
 							type="radio" 
 							value="option3" 
 							checked={this.selectedOption === 'option3'} 
@@ -69,8 +66,7 @@ class ReviewForm extends Component {
 						3
 					</label>
 					<label>
-						<input 
-							name='rating' 
+						<input  
 							type="radio" 
 							value="option4" 
 							checked={this.selectedOption === 'option4'} 
@@ -79,8 +75,7 @@ class ReviewForm extends Component {
 						4
 					</label>
 					<label>
-						<input 
-							name='rating' 
+						<input  
 							type="radio" 
 							value="option5" 
 							checked={this.selectedOption === 'option5'} 
