@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { ReactRadioButtonsGroup, ReactRadioButton } from 'react-radio-buttons-group';
 
 import { updateReviewFormData } from '../actions/reviewForm';
 import { createReview } from '../actions/reviews';
@@ -8,13 +9,13 @@ class ReviewForm extends Component {
 	constructor() {
 		super();
 		this.state = {
-			selectedOption: 'option5'
+			rating: 5
 		}
 	}
 
-	handleOptionChange = event => {
+	onRadiochange = value => {
 		this.setState({
-			selectedOption: event.target.value
+			rating: value
 		})
 	};
 
@@ -39,51 +40,13 @@ class ReviewForm extends Component {
 			<div>
 				<form onSubmit={this.handleOnSubmit} >
 					<label htmlFor='rating'>Rating (1 lowest, 5 highest):</label>
-					<label>
-						<input  
-							type="radio" 
-							value="option1" 
-							checked={this.selectedOption === 'option1'} 
-							onChange={this.handleOptionChange}
-						/>
-						1
-					</label>
-					<label>
-						<input  
-							type="radio" 
-							value="option2" 
-							checked={this.selectedOption === 'option2'} 
-							onChange={this.handleOptionChange}
-						/>
-						2
-					</label>
-					<label>
-						<input  
-							type="radio" 
-							value="option3" 
-							checked={this.selectedOption === 'option3'} 
-							onChange={this.handleOptionChange}
-						/>
-						3
-					</label>
-					<label>
-						<input  
-							type="radio" 
-							value="option4" 
-							checked={this.selectedOption === 'option4'} 
-							onChange={this.handleOptionChange}
-						/>
-						4
-					</label>
-					<label>
-						<input  
-							type="radio" 
-							value="option5" 
-							checked={this.selectedOption === 'option5'} 
-							onChange={this.handleOptionChange}
-						/>
-						5
-					</label>
+				        <ReactRadioButtonsGroup horizontal onChange={this.onRadiochange}>
+				          <ReactRadioButton value="1">1</ReactRadioButton>
+				          <ReactRadioButton value="2">2</ReactRadioButton>
+				          <ReactRadioButton value="3">3</ReactRadioButton>
+				          <ReactRadioButton value="4">4</ReactRadioButton>
+				          <ReactRadioButton value="5">5</ReactRadioButton>
+				        </ReactRadioButtonsGroup>					
 					<br /><br />
 					<label htmlFor='Comment'>Comment:</label>
 					<input type='textarea' value={comment} /><br /><br />
