@@ -9,9 +9,9 @@ const addReview = review => {
 	}
 }
 
-export const createReview = (review, medicationId) => {
+export const createReview = (review, medication_id) => {
 	return dispatch => {
-		return fetch(`${API_URL}/medications/${medicationId}/reviews`, {
+		return fetch(`${API_URL}/medications/${medication_id}/reviews`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'

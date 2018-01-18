@@ -23,7 +23,7 @@ class ReviewForm extends Component {
 			comment: this.props.reviewFormData.comment
 		})
 		console.log(currentReviewFormData);
-		this.props.createReview(currentReviewFormData)
+		this.props.createReview(currentReviewFormData, medication_id)
 		console.log(this.props.reviewFormData.comment);
 	}
 	
