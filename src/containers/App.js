@@ -7,6 +7,7 @@ import Home from '../components/Home';
 import Navbar from '../components/Navbar';
 import './App.css';
 import MedicationForm from '../components/MedicationForm';
+import ReviewForm from '../components/ReviewForm';
 
 class App extends Component {
 
@@ -19,6 +20,7 @@ class App extends Component {
 	      		<Route exact path='/' component={Home}/>
 	      		<Route exact path='/medications/new' component={MedicationForm}/>
 	      		<Route exact path='/medications/:id' component={Medication}/>
+	      		<Route exact path='/medications/:id/reviews' component={ReviewForm}/>
 	      		<Route exact path='/medications' component={MedicationsPage}/>
 	      	</Switch>
 	      </div>

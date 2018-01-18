@@ -16,10 +16,9 @@ class ReviewForm extends Component {
 
 	handleOnSubmit = event => {
 		event.preventDefault();
-		//const medicationId = this.params.medication.id;
-
+		const medication_id = this.props.medication_id;
 		const currentReviewFormData = Object.assign({}, this.props.reviewFormData, {
-			medicationId: this.props.reviewFormData.medicationId,
+			medication_id: medication_id,
 			rating: this.props.reviewFormData.rating,
 			comment: this.props.reviewFormData.comment
 		})
@@ -31,7 +30,6 @@ class ReviewForm extends Component {
 	render() {
 
 		const { rating, comment } = this.props.reviewFormData;
-	
 
 		return (
 			<div>

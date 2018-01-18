@@ -1,5 +1,5 @@
 const initialState = {
-	medicationId: '',
+	medication_id: '',
 	rating: '',
 	comment: '',
 }
