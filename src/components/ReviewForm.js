@@ -25,7 +25,8 @@ class ReviewForm extends Component {
 			rating: this.state.selectedOption,
 			comment: this.props.reviewFormData.comment
 		})
-		this.props.updateReviewFormData(currentReviewFormData)
+		console.log(currentReviewFormData);
+		//this.props.updateReviewFormData(currentReviewFormData)
 		console.log(this.state.selectedOption);
 		console.log(this.props.reviewFormData.comment);
 	}
@@ -85,7 +86,7 @@ class ReviewForm extends Component {
 					</label>
 					<br /><br />
 					<label htmlFor='Comment'>Comment:</label>
-					<input type='textarea' comment={comment} /><br /><br />
+					<input type='textarea' value={comment} /><br /><br />
 					
 					<button type="submit">Submit Review</button>
 				</form>
