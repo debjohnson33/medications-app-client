@@ -1,5 +1,5 @@
 const initialState = {
-	rating: 0,
+	rating: '',
 	comment: '',
 }
 export default (state = initialState, action) => {

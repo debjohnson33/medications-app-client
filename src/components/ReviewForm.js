@@ -1,56 +1,43 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { ReactRadioButtonsGroup, ReactRadioButton } from 'react-radio-buttons-group';
 
 import { updateReviewFormData } from '../actions/reviewForm';
 import { createReview } from '../actions/reviews';
 
 class ReviewForm extends Component {
-	constructor() {
-		super();
-		this.state = {
-			rating: 5
-		}
-	}
 
-	onRadiochange = value => {
-		this.setState({
-			rating: value
+	handleOnChange = event => {
+		const { name, value } = event.target;
+		const currentReviewFormData = Object.assign({}, this.props.reviewFormData, {
+			[name]: value
 		})
-		console.log(this.state.rating)
-	};
+		this.props.updateReviewFormData(currentReviewFormData)
+	}
 
 	handleOnSubmit = event => {
 		event.preventDefault();
 
 		const currentReviewFormData = Object.assign({}, this.props.reviewFormData, {
-			rating: this.state.rating,
+			rating: this.props.reviewFormData.rating,
 			comment: this.props.reviewFormData.comment
 		})
 		console.log(currentReviewFormData);
-		//this.props.updateReviewFormData(currentReviewFormData)
-		console.log(this.state.selectedOption);
+		this.props.updateReviewFormData(currentReviewFormData)
 		console.log(this.props.reviewFormData.comment);
 	}
 	
 	render() {
 
-		const { comment } = this.props.reviewFormData;
+		const { rating, comment } = this.props.reviewFormData;
 
 		return (
 			<div>
 				<form onSubmit={this.handleOnSubmit} >
 					<label htmlFor='rating'>Rating (1 lowest, 5 highest):</label>
-				        <ReactRadioButtonsGroup horizontal onChange={this.onRadiochange}>
-				          <ReactRadioButton value="1">1</ReactRadioButton>
-				          <ReactRadioButton value="2">2</ReactRadioButton>
-				          <ReactRadioButton value="3">3</ReactRadioButton>
-				          <ReactRadioButton value="4">4</ReactRadioButton>
-				          <ReactRadioButton value="5">5</ReactRadioButton>
-				        </ReactRadioButtonsGroup>					
+				    <input type='text' name='rating' value={rating} onChange={this.handleOnChange}/>    					
 					<br /><br />
 					<label htmlFor='Comment'>Comment:</label>
-					<input type='textarea' value={comment} /><br /><br />
+					<input type='textarea' name='comment' value={comment} onChange={this.handleOnChange}/><br /><br />
 					
 					<button type="submit">Submit Review</button>
 				</form>
