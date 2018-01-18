@@ -9,7 +9,7 @@ const addReview = review => {
 	}
 }
 
-export const createReview = (review, reviewId) => {
+export const createReview = (review, medicationId) => {
 	return dispatch => {
 		return fetch(`${API_URL}/reviews`, {
 			method: 'POST',

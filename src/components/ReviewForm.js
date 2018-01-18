@@ -18,17 +18,18 @@ class ReviewForm extends Component {
 		event.preventDefault();
 
 		const currentReviewFormData = Object.assign({}, this.props.reviewFormData, {
+			medicationId: this.props.medicationId,
 			rating: this.props.reviewFormData.rating,
 			comment: this.props.reviewFormData.comment
 		})
 		console.log(currentReviewFormData);
-		this.props.updateReviewFormData(currentReviewFormData)
+		this.props.createReview(currentReviewFormData)
 		console.log(this.props.reviewFormData.comment);
 	}
 	
 	render() {
 
-		const { rating, comment } = this.props.reviewFormData;
+		const { medicationId, rating, comment } = this.props.reviewFormData;
 
 		return (
 			<div>
