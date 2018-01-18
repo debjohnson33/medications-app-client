@@ -17,13 +17,14 @@ class ReviewForm extends Component {
 		this.setState({
 			rating: value
 		})
+		console.log(this.state.rating)
 	};
 
 	handleOnSubmit = event => {
 		event.preventDefault();
 
 		const currentReviewFormData = Object.assign({}, this.props.reviewFormData, {
-			rating: this.state.selectedOption,
+			rating: this.state.rating,
 			comment: this.props.reviewFormData.comment
 		})
 		console.log(currentReviewFormData);
@@ -34,7 +35,7 @@ class ReviewForm extends Component {
 	
 	render() {
 
-		const { rating, comment } = this.props.reviewFormData;
+		const { comment } = this.props.reviewFormData;
 
 		return (
 			<div>
