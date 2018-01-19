@@ -18,11 +18,20 @@ export const createReview = (review, medication_id) => {
 			},
 			body: JSON.stringify({ review: review })
 		})
+		.then(handleErrors)
 		.then(response => response.json())
 		.then(review => {
 			dispatch(addReview(review))
 			dispatch(resetReviewForm())
 		})
-		.catch(error => console.log(error))
+		.catch(error => 
+			dispatch({type: 'error'})
 	}
+}
+
+function handleErrors(response) {
+	if(!response.ok) {
+		throw Error(response.statusText);
+	}
+	return response;
 }

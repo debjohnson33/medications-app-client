@@ -31,6 +31,7 @@ class ReviewForm extends Component {
 
 		return (
 			<div>
+				{this.props.errors === true ? <FormError /> : null}
 				<form onSubmit={this.handleOnSubmit} >
 					<label htmlFor='rating'>Rating (1 lowest, 5 highest):</label>
 				    <input type='text' name='rating' value={rating} onChange={this.handleOnChange}/>    					
@@ -47,7 +48,8 @@ class ReviewForm extends Component {
 
 const mapStateToProps = state => {
 	return {
-		reviewFormData: state.reviewFormData
+		reviewFormData: state.reviewFormData,
+		errors: state.errors
 	}
 }
  
