@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import { updateReviewFormData } from '../actions/reviewForm';
 import { createReview } from '../actions/reviews';
+import FormError from './FormError';
 
 class ReviewForm extends Component {
 

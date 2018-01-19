@@ -24,8 +24,9 @@ export const createReview = (review, medication_id) => {
 			dispatch(addReview(review))
 			dispatch(resetReviewForm())
 		})
-		.catch(error => 
+		.catch(error => {
 			dispatch({type: 'error'})
+		})
 	}
 }
 
