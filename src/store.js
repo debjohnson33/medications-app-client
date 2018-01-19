@@ -5,11 +5,13 @@ import medicationsReducer from './reducers/medicationsReducer';
 import medicationFormData from './reducers/medicationFormData';
 import reviewFormData from './reducers/reviewFormData';
 import errorsReducer from './reducers/errorsReducer';
+import reviewsReducer from './reducers/reviewsReducer';
 
 const reducers = combineReducers({
 	medications: medicationsReducer,
 	medicationFormData,
 	reviewFormData,
+	reviewsReducer,
 	errors: errorsReducer
 });
 const middleware = [thunk];
