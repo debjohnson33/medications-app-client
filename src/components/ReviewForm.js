@@ -22,9 +22,7 @@ class ReviewForm extends Component {
 			rating: this.props.reviewFormData.rating,
 			comment: this.props.reviewFormData.comment
 		})
-		console.log(currentReviewFormData);
 		this.props.createReview(currentReviewFormData, medication_id)
-		console.log(this.props.reviewFormData.comment);
 	}
 	
 	render() {
@@ -49,8 +47,7 @@ class ReviewForm extends Component {
 
 const mapStateToProps = state => {
 	return {
-		reviewFormData: state.reviewFormData,
-		medications: state.medications
+		reviewFormData: state.reviewFormData
 	}
 }
  
