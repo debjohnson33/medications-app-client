@@ -4,11 +4,13 @@ import thunk from 'redux-thunk';
 import medicationsReducer from './reducers/medicationsReducer';
 import medicationFormData from './reducers/medicationFormData';
 import reviewFormData from './reducers/reviewFormData';
+import errorsReducer from './reducers/errorsReducer';
 
 const reducers = combineReducers({
 	medications: medicationsReducer,
 	medicationFormData,
-	reviewFormData
+	reviewFormData,
+	errors: errorsReducer
 });
 const middleware = [thunk];
 
