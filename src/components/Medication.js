@@ -36,7 +36,7 @@ class Medication extends Component {
 							<p>Precautions: {medication.precautions}</p>
 							<button onClick={this.handleOnDelete}>Delete Medication</button><br /><br />
 							<p>Add a Review:</p>
-							<ReviewForm medication_id={medication.id}/>
+							<ReviewForm medication={medication} medication_id={medication.id}/>
 							<h3>Reviews:</h3>
 							<Reviews reviews={medication.reviews}/>
 						</div>
