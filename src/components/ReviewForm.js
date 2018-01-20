@@ -50,6 +50,7 @@ class ReviewForm extends Component {
 const mapStateToProps = state => {
 	return {
 		reviewFormData: state.reviewFormData,
+		reviews: state.reviews,
 		errors: state.errors
 	}
 }
