@@ -5,6 +5,8 @@ const initialState = {
 }
 export default (state = initialState, action) => {
 	switch (action.type) {
+		case 'REVIEWS_FETCH_DATA_SUCCESS':
+			return action.reviews
 		case 'CREATE_REVIEW_SUCCESS':
 			return state.concat(action.review)
 		

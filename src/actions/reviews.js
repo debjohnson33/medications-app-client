@@ -2,12 +2,29 @@ import { resetReviewForm } from './reviewForm';
 
 const API_URL = process.env.REACT_APP_API_URL;
 
+export const reviewsFetchDataSuccess = reviews => {
+	return {
+		type: 'REVIEWS_FETCH_DATA_SUCCESS',
+		reviews
+	}
+}
 const addReview = review => {
 	return {
 		type: 'CREATE_REVIEW_SUCCESS',
 		review
 	}
 }
+
+export const fetchReviews = () => {
+	return dispatch => {
+		return fetch(`${API_URL}/reviews/`)
+			.then(response => response.json())
+			.then(reviews => {
+				dispatch(reviewsFetchDataSuccess(reviews));
+			})
+			.catch(error => console.log(error));
+	};
+};
 
 export const createReview = (review, medication_id) => {
 	return dispatch => {
