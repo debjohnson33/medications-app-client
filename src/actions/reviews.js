@@ -2,7 +2,7 @@ import { resetReviewForm } from './reviewForm';
 
 const API_URL = process.env.REACT_APP_API_URL;
 
-export const reviewsFetchDataSuccess = reviews => {
+const reviewsFetchDataSuccess = reviews => {
 	return {
 		type: 'REVIEWS_FETCH_DATA_SUCCESS',
 		reviews

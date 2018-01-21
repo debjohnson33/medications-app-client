@@ -9,13 +9,11 @@ import ReviewForm from './ReviewForm';
 class Medication extends Component {
 
 	componentDidMount() {
-		if (this.props.medications.length === 0) {
-			this.props.fetchMedications();
-		}
-
-		if (this.props.reviews.length === 0) {
+		//if (this.props.reviews.length === 0) {
 			this.props.fetchReviews();
-		}
+			console.log(this.props.reviews);
+		//}
+
 	}
 
 	handleOnDelete = event => {
@@ -59,7 +57,8 @@ class Medication extends Component {
 
 const mapStateToProps = (state) => {
 	return ({
-		medications: state.medications
+		medications: state.medications,
+		reviews: state.reviews
 	});
 };
 
