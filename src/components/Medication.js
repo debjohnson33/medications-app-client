@@ -9,10 +9,9 @@ import ReviewForm from './ReviewForm';
 class Medication extends Component {
 
 	componentDidMount() {
-		//if (this.props.reviews.length === 0) {
-			this.props.fetchReviews();
-			console.log(this.props.reviews);
-		//}
+		if (this.props.medications.length === 0) {
+			this.props.fetchMedications();
+		}
 
 	}
 
@@ -25,7 +24,7 @@ class Medication extends Component {
 
 	render() {
 		const medicationShow = () => {
-			const { medications, reviews } = this.props;
+			const { medications } = this.props;
 			const medicationId = parseInt(this.props.match.params.id, 10);
 			const filteredMedication = medications.filter(medication => medication.id === medicationId);
 				return filteredMedication.map(medication => {
@@ -40,7 +39,7 @@ class Medication extends Component {
 							<p>Add a Review:</p>
 							<ReviewForm medication={medication} medication_id={medication.id}/>
 							<h3>Reviews:</h3>
-							<Reviews reviews={reviews}/>
+							<Reviews medication_id={medication.id}/>
 						</div>
 					)
 				})
