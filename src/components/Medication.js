@@ -39,7 +39,7 @@ class Medication extends Component {
 							<p>Add a Review:</p>
 							<ReviewForm medication={medication} medication_id={medication.id}/>
 							<h3>Reviews:</h3>
-							<Reviews medication_id={medication.id}/>
+							<Reviews medication_id={medicationId} />
 						</div>
 					)
 				})

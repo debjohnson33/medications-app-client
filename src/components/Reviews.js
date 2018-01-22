@@ -2,21 +2,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { fetchReviews } from '../actions/reviews';
-
-
-class Reviews extends Component {
-		debugger;
 	
+class Reviews extends Component {
 	componentDidMount() {
-		const medication_id = this.props.medication_id;
-		if (this.props.reviews.length === 0) {
-			this.props.fetchReviews(medication_id);
-
-		}
+		this.props.fetchReviews();
 	}
 
 	render() {
-
+		debugger;
 		const reviews = this.props.reviews;
 
 		return(
@@ -36,6 +29,7 @@ class Reviews extends Component {
 
 const mapStateToProps = (state) => {
 	return ({
+		medications: state.medications,
 		reviews: state.reviews
 	});
 };

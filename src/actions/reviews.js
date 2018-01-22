@@ -15,9 +15,9 @@ const addReview = review => {
 	}
 }
 
-export const fetchReviews = (medication_id) => {
+export const fetchReviews = () => {
 	return dispatch => {
-		return fetch(`${API_URL}/medications/${medication_id}/reviews`)
+		return fetch(`${API_URL}/reviews`)
 			.then(response => response.json())
 			.then(reviews => {
 				dispatch(reviewsFetchDataSuccess(reviews));
