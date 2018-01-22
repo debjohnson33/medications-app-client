@@ -11,7 +11,7 @@ const reducers = combineReducers({
 	medications: medicationsReducer,
 	medicationFormData,
 	reviewFormData,
-	reviewsReducer,
+	reviews: reviewsReducer,
 	errors: errorsReducer
 });
 const middleware = [thunk];

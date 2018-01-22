@@ -9,12 +9,12 @@ class Reviews extends Component {
 	}
 
 	render() {
-		debugger;
-		const reviews = this.props.reviews;
+		const { medication, reviews } = this.props;
+		const filteredReviews = reviews.filter(review => medication.id === review.medication_id);
 
 		return(
 			<div>
-				{reviews.map(review => 
+				{filteredReviews.map(review => 
 					<div key={review.id}>
 						<h4>Review:</h4>
 						<p>Rating: {review.rating}</p>

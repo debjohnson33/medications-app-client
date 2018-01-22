@@ -1,9 +1,9 @@
-const initialState = {
+/*const initialState = {
 	medication_id: '',
 	rating: '',
 	comment: ''
-}
-export default (state = initialState, action) => {
+}*/
+export default (state = [], action) => {
 	switch (action.type) {
 		case 'REVIEWS_FETCH_DATA_SUCCESS':
 			return action.reviews

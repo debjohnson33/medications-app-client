@@ -24,7 +24,7 @@ class Medication extends Component {
 
 	render() {
 		const medicationShow = () => {
-			const { medications } = this.props;
+			const { medications, reviews } = this.props;
 			const medicationId = parseInt(this.props.match.params.id, 10);
 			const filteredMedication = medications.filter(medication => medication.id === medicationId);
 				return filteredMedication.map(medication => {
@@ -39,7 +39,7 @@ class Medication extends Component {
 							<p>Add a Review:</p>
 							<ReviewForm medication={medication} medication_id={medication.id}/>
 							<h3>Reviews:</h3>
-							<Reviews medication_id={medicationId} />
+							<Reviews medication_id={medicationId} medication={medication} />
 						</div>
 					)
 				})
