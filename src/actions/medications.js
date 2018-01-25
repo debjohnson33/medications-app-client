@@ -1,6 +1,7 @@
 import fetch from 'isomorphic-fetch';
 import { resetMedicationForm } from './medicationForm';
 import { fetchReviews } from './reviews';
+import { handleErrors } from './reviews';
 
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -45,13 +46,16 @@ export const createMedication = (medication) => {
 			},
 			body: JSON.stringify({ medication: medication })
 		})
+			.then(handleErrors)
 			.then(response => response.json())
 			.then(medication => {
 				dispatch(addMedication(medication))
 				dispatch(resetMedicationForm())
 				//history.push('/medications')
 			})
-			.catch(error => console.log(error))
+			.catch(error => {
+				dispatch({type: 'error'})
+			})
 	}	
 }
 
