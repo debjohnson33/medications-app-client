@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { updateMedicationFormData } from '../actions/medicationForm';
 import { createMedication } from '../actions/medications';
+import FormError from './FormError';
 
 class MedicationForm extends Component {
 
@@ -25,7 +26,7 @@ class MedicationForm extends Component {
 		return (
 			<div>
 			<h4>Add a Medication to the List</h4>
-
+			{this.props.errors === true ? <FormError /> : null}
 			<form onSubmit={this.handleOnSubmit}>
 				<div>
 					<label htmlFor='name'>Name:</label>
