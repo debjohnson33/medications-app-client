@@ -25,8 +25,8 @@ class MedicationForm extends Component {
 		
 		return (
 			<div>
-			<h4>Add a Medication to the List</h4>
 			{this.props.errors === true ? <FormError /> : null}
+			<h4>Add a Medication to the List</h4>
 			<form onSubmit={this.handleOnSubmit}>
 				<div>
 					<label htmlFor='name'>Name:</label>
@@ -81,7 +81,8 @@ class MedicationForm extends Component {
 
 const mapStateToProps = state => {
 	return {
-		medicationFormData: state.medicationFormData
+		medicationFormData: state.medicationFormData,
+		errors: state.errors
 	}
 }
  
