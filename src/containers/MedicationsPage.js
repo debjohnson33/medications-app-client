@@ -17,14 +17,15 @@ class MedicationsPage extends Component {
 
 	render() {
 		return (
-			<div>
-				<div className="medForm">
-					<MedicationForm />
-				</div>
-				<div className="medList">
+			<div className="row">
+				<div className="col-3">
 					<h3>Medications</h3>
 					<MedicationsList medications={this.props.medications} />
 				</div>	
+				<div className="col-4"></div>
+				<div className="col-3">
+					<MedicationForm />
+				</div>
 			</div>
 		)
 	}
