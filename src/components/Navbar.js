@@ -24,6 +24,12 @@ const Navbar = () =>
 		exact
 		style={link}
 		>Medications</NavLink>
+
+		<NavLink
+		to='/about'
+		exact
+		style={link}
+		>About</NavLink>
 	</div>
 
 export default Navbar;
