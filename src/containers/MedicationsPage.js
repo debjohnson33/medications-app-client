@@ -22,7 +22,7 @@ class MedicationsPage extends Component {
 					<h3>Medications</h3>
 					<MedicationsList medications={this.props.medications} />
 				</div>	
-				<div className="col-4"></div>
+				<div className="col-3"></div>
 				<div className="col-3">
 					<MedicationForm />
 				</div>
