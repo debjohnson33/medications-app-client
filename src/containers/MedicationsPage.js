@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { fetchMedications} from '../actions/medications';
 import MedicationsList from '../components/MedicationsList';
 import MedicationForm from '../components/MedicationForm';
+import './medicationsPage.css'
 
 class MedicationsPage extends Component {
 
@@ -17,10 +18,10 @@ class MedicationsPage extends Component {
 	render() {
 		return (
 			<div>
-				<div>
+				<div className="medForm">
 					<MedicationForm />
 				</div>
-				<div>
+				<div className="medList">
 					<h3>Medications</h3>
 					<MedicationsList medications={this.props.medications} />
 				</div>	
