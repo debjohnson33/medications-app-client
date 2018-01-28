@@ -17,9 +17,13 @@ class MedicationsPage extends Component {
 	render() {
 		return (
 			<div>
-				<MedicationForm />
-				<h3>Medications</h3>
-				<MedicationsList medications={this.props.medications} />
+				<div>
+					<MedicationForm />
+				</div>
+				<div>
+					<h3>Medications</h3>
+					<MedicationsList medications={this.props.medications} />
+				</div>	
 			</div>
 		)
 	}
