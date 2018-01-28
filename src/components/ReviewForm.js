@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { updateReviewFormData } from '../actions/reviewForm';
 import { createReview } from '../actions/reviews';
 import FormError from './FormError';
+import './Medication.css';
 
 class ReviewForm extends Component {
 
@@ -40,7 +41,7 @@ class ReviewForm extends Component {
 					<label htmlFor='Comment'>Comment:</label>
 					<input type='textarea' name='comment' value={comment} onChange={this.handleOnChange}/><br /><br />
 					
-					<button type="submit">Submit Review</button>
+					<button type="submit" className="med" >Submit Review</button>
 				</form>
 			</div>
 		)

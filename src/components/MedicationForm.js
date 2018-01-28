@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { updateMedicationFormData } from '../actions/medicationForm';
 import { createMedication } from '../actions/medications';
 import FormError from './FormError';
+import './Medication.css';
 
 class MedicationForm extends Component {
 
@@ -72,7 +73,7 @@ class MedicationForm extends Component {
 						name='precautions'
 						value={precautions} />
 				</div>
-				<button type="submit">Add Medication</button>
+				<button type="submit" className="med" >Add Medication</button>
 			</form>
 			</div>
 		)

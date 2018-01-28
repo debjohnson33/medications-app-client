@@ -5,6 +5,7 @@ import { fetchMedications, deleteMedication } from '../actions/medications';
 import { fetchReviews } from '../actions/reviews';
 import Reviews from './Reviews';
 import ReviewForm from './ReviewForm';
+import './Medication.css';
 
 class Medication extends Component {
 
@@ -35,7 +36,7 @@ class Medication extends Component {
 							<p>Uses: {medication.uses}</p>
 							<p>Side Effects: {medication.uses}</p>
 							<p>Precautions: {medication.precautions}</p>
-							<button onClick={this.handleOnDelete}>Delete Medication</button><br /><br />
+							<button className="med" onClick={this.handleOnDelete}>Delete Medication</button><br /><br />
 							<p>Add a Review:</p>
 							<ReviewForm medication={medication} medication_id={medication.id}/>
 							<h3>Reviews:</h3>
