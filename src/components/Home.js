@@ -10,7 +10,7 @@ const Home = (props) => {
 	        <br />
 	        <br />
 	        <div>
-	        	<img src={'/images/meds.jpg'} alt="Picture of different color pills" />
+	        	<img src={'/images/meds.jpg'} alt="Different color pills" />
 			</div>
 		</div>
 	)
