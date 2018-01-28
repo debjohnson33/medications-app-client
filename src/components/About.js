@@ -3,6 +3,7 @@ import React from 'react';
 const About = (props) => {
 	return(
 		<div>
+			<br />
 			<header className="App-header">
 	          <h1 className="App-title">About the Medications App</h1>
 	        </header>
