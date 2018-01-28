@@ -6,6 +6,11 @@ const Home = (props) => {
 			<header className="App-header">
 	          <h1 className="App-title">Welcome to the Medications App!</h1>
 	        </header>
+	        <br />
+	        <br />
+	        <div>
+	        	<img src={'/images/meds.jpg'} alt="Picture of different color pills" />
+			</div>
 		</div>
 	)
 }
