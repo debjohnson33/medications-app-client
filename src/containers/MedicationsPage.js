@@ -15,11 +15,22 @@ class MedicationsPage extends Component {
 	}
 
 	render() {
+		const sortedMedications = this.props.medications.sort(function(a, b) {
+    		let nameA = a.name.toUpperCase();
+    		let nameB = b.name.toUpperCase();
+    		if (nameA < nameB) {
+        		return -1; 
+        	}
+    		if (nameA > nameB) {
+        		return 1; 
+        	}
+    			return 0; 
+    		});
 		return (
 			<div className="row">
 				<div className="col-6">
 					<h3>Medications</h3>
-					<MedicationsList medications={this.props.medications} />
+					<MedicationsList medications={sortedMedications} />
 				</div>	
 				<div className="col-6">
 					<MedicationForm />
