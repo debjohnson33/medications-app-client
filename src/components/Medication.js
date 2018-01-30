@@ -31,7 +31,7 @@ class Medication extends Component {
 			const filteredMedication = medications.filter(medication => medication.id === medicationId);
 				return filteredMedication.map(medication => {
 					return(
-						<div className="row">
+						<div key={medication.id} className="row">
 						<div key={medication.id} className="col-4">
 							<p>Name: {medication.name}</p>
 							<p>Generic Name: {medication.generic_name}</p>
