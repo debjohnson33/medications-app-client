@@ -35,7 +35,9 @@ class MedicationForm extends Component {
 						type='text'
 						onChange={this.handleOnChange}
 						name='name' 
-						value={name} />
+						value={name} 
+						placeholder='Medication Name'
+					/>
 				</div>
 
 				<div>
@@ -44,7 +46,9 @@ class MedicationForm extends Component {
 						type='text' 
 						onChange={this.handleOnChange}
 						name='generic_name'
-						value={generic_name} />
+						value={generic_name} 
+						placeholder='Generic Name'
+					/>
 				</div>
 
 				<div>
@@ -53,7 +57,9 @@ class MedicationForm extends Component {
 						type='textarea' 
 						onChange={this.handleOnChange}
 						name='uses'
-						value={uses} />
+						value={uses} 
+						placeholder='Uses'
+					/>
 				</div>
 
 				<div>
@@ -62,7 +68,9 @@ class MedicationForm extends Component {
 						type='textarea'
 						onChange={this.handleOnChange} 
 						name='side_effects'
-						value={side_effects} />
+						value={side_effects} 
+						placeholder='Side Effects'
+					/>
 				</div>
 
 				<div>
@@ -71,7 +79,9 @@ class MedicationForm extends Component {
 						type='text' 
 						onChange={this.handleOnChange}
 						name='precautions'
-						value={precautions} />
+						value={precautions} 
+						placeholder='Precautions'
+					/>
 				</div>
 				<button type="submit" className="med" >Add Medication</button>
 			</form>
