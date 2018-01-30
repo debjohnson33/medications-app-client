@@ -26,7 +26,7 @@ class Medication extends Component {
 
 	render() {
 		const medicationShow = () => {
-			const { medications, reviews } = this.props;
+			const { medications } = this.props;
 			const medicationId = parseInt(this.props.match.params.id, 10);
 			const filteredMedication = medications.filter(medication => medication.id === medicationId);
 				return filteredMedication.map(medication => {

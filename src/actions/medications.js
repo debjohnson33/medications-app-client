@@ -1,6 +1,5 @@
 import fetch from 'isomorphic-fetch';
 import { resetMedicationForm } from './medicationForm';
-import { fetchReviews } from './reviews';
 import { handleErrors } from './reviews';
 
 const API_URL = process.env.REACT_APP_API_URL;
