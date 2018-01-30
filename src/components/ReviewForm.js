@@ -36,10 +36,23 @@ class ReviewForm extends Component {
 				{this.props.errors === true ? <FormError /> : null}
 				<form onSubmit={this.handleOnSubmit} >
 					<label htmlFor='rating'>Rating (1 lowest, 5 highest):</label>
-				    <input type='text' name='rating' value={rating} onChange={this.handleOnChange}/>    					
+				    <input 
+				    	type='text' 
+				    	name='rating' 
+				    	value={rating} 
+				    	onChange={this.handleOnChange}
+				    	placeholder='Rating between 1 and 5'
+				    />    					
 					<br /><br />
 					<label htmlFor='Comment'>Comment:</label>
-					<input type='textarea' name='comment' value={comment} onChange={this.handleOnChange}/><br /><br />
+					<input 
+						type='textarea' 
+						name='comment' 
+						value={comment} 
+						onChange={this.handleOnChange}
+						placeholder='comment'
+					/>
+						<br /><br />
 					
 					<button type="submit" className="med" >Submit Review</button>
 				</form>
