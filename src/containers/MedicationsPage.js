@@ -17,12 +17,11 @@ class MedicationsPage extends Component {
 	render() {
 		return (
 			<div className="row">
-				<div className="col-3">
+				<div className="col-6">
 					<h3>Medications</h3>
 					<MedicationsList medications={this.props.medications} />
 				</div>	
-				<div className="col-2"></div>
-				<div className="col-3">
+				<div className="col-6">
 					<MedicationForm />
 				</div>
 			</div>
