@@ -10,7 +10,6 @@ class MedicationsPage extends Component {
 
 	componentDidMount() {
 		if (this.props.medications.length === 0) {
-			console.log('component did mount')
 			this.props.fetchMedications();
 		}
 	}
@@ -22,7 +21,7 @@ class MedicationsPage extends Component {
 					<h3>Medications</h3>
 					<MedicationsList medications={this.props.medications} />
 				</div>	
-				<div className="col-3"></div>
+				<div className="col-2"></div>
 				<div className="col-3">
 					<MedicationForm />
 				</div>
@@ -36,9 +35,5 @@ const mapStateToProps = (state) => {
 		medications: state.medications
 	});
 };
-
-///const mapDispatchToProps = (dispatch) => {
-//	return ({actions: bindActionCreators(actions, dispatch)})
-//}
 
 export default connect(mapStateToProps, { fetchMedications })(MedicationsPage);
