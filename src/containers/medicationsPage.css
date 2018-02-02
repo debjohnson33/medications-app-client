@@ -26,3 +26,16 @@
 .col-10 {width: 83.33%;}
 .col-11 {width: 91.66%;}
 .col-12 {width: 100%;}
+
+/*######### Mobile #########*/
+
+@media screen and (max-width: 680px) {
+	.col-6, .col-4 {
+		width: 100%;
+		margin: 0;
+	}
+
+
+}
+
+
