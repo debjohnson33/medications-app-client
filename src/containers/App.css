@@ -14,7 +14,9 @@
 }
 
 img {
-	margin: 20px;
+  display: block;
+	margin: auto;
+  width: 50%;
 }
 
 p#appInfo {
