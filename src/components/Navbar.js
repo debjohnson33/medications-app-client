@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import './Medication.css';
 
 const link = {
 	width: '100px',
@@ -11,7 +12,7 @@ const link = {
 }
 
 const Navbar = () => 
-	<div>
+	<div className="nav">
 		<br />
 		<NavLink
 		to='/'
