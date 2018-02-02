@@ -44,14 +44,15 @@ class ReviewForm extends Component {
 				    	placeholder='Rating between 1 and 5'
 				    />    					
 					<br /><br />
-					<label htmlFor='Comment'>Comment:</label>
-					<input 
-						type='textarea' 
+					<label htmlFor='Comment'>Comment:</label><br />
+					<textarea
+						rows='4'
+						columns='70'
 						name='comment' 
 						value={comment} 
 						onChange={this.handleOnChange}
-						placeholder='comment'
-					/>
+						placeholder='comment'>
+					</textarea>
 						<br /><br />
 					
 					<button type="submit" className="med" >Submit Review</button>
