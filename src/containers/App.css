@@ -3,10 +3,14 @@
 }
 
 .App-header {
-  background-color: #801515;
+  background: #ba2737; /* Old browsers */
+  background: -moz-linear-gradient(top, #ba2737 -1%, #f18e99 0%, #ba2737 0%, #d24b5a 39%, #efc5ca 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #ba2737 -1%,#f18e99 0%,#ba2737 0%,#d24b5a 39%,#efc5ca 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #ba2737 -1%,#f18e99 0%,#ba2737 0%,#d24b5a 39%,#efc5ca 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   height: 50px;
   padding: 20px;
   color: white;
+  text-shadow: 2px 2px 5px black;
 }
 
 .App-title {
