@@ -7,3 +7,13 @@
 	border: 4px solid #D46A6A;
 	border-radius: 12px;
 }
+
+#medHeading {
+	padding: 20px 0 0 10px;
+	box-sizing: border-box;
+}
+
+#medInfo, #reviewForm, #reviews {
+	padding: 0 10px 10px 10px;
+	box-sizing: border-box;
+}

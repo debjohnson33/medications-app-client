@@ -32,7 +32,7 @@ class Medication extends Component {
 				return filteredMedication.map(medication => {
 					return(
 						<div key={medication.id} className="row">
-						<div key={medication.id} className="col-4">
+						<div key={medication.id} className="col-4" id="medInfo">
 							<p>Name: {medication.name}</p>
 							<p>Generic Name: {medication.generic_name}</p>
 							<p>Uses: {medication.uses}</p>
@@ -40,11 +40,11 @@ class Medication extends Component {
 							<p>Precautions: {medication.precautions}</p>
 							<button className="med" onClick={this.handleOnDelete}>Delete Medication</button><br /><br />
 						</div>
-						<div className="col-4">
+						<div className="col-4" id="reviewForm">
 							<p>Add a Review:</p>
 							<ReviewForm medication={medication} medication_id={medication.id}/>
 						</div>
-						<div className="col-4">
+						<div className="col-4" id="reviews">
 							<h3>Reviews:</h3>
 							<Reviews medication_id={medicationId} medication={medication} />
 						</div>
@@ -55,7 +55,7 @@ class Medication extends Component {
 
 		return (
 			<div>
-				<h3>Medication</h3>
+				<h3 className="col-4" id="medHeading">Medication</h3>
 				{medicationShow()}
 			</div>
 		)
