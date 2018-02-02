@@ -28,11 +28,11 @@ class MedicationsPage extends Component {
     		});
 		return (
 			<div className="row">
-				<div className="col-6">
+				<div className="col-6" id="medList">
 					<h3>Medications</h3>
 					<MedicationsList medications={sortedMedications} />
 				</div>	
-				<div className="col-6">
+				<div className="col-6" id="medForm">
 					<MedicationForm />
 				</div>
 			</div>

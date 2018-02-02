@@ -4,6 +4,16 @@
 	flex-wrap: wrap;
 }
 
+#medList {
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+#medForm {
+	padding: 10px;
+	box-sizing: border-box;
+}
+
 .col-1 {width: 8.33%};
 .col-2 {width: 16.66%;}
 .col-3 {width: 25%;}
