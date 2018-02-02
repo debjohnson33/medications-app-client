@@ -39,7 +39,7 @@ class MedicationForm extends Component {
 						placeholder='Medication Name'
 					/>
 				</div>
-
+				<br />
 				<div>
 					<label htmlFor='generic_name'>Generic Name:</label>
 					<input 
@@ -50,38 +50,41 @@ class MedicationForm extends Component {
 						placeholder='Generic Name'
 					/>
 				</div>
-
+				<br />
 				<div>
-					<label htmlFor='uses'>Uses:</label>
-					<input 
-						type='textarea' 
+					<label htmlFor='uses'>Uses:</label><br />
+					<textarea
+						rows='4'
+						columns='70' 
 						onChange={this.handleOnChange}
 						name='uses'
 						value={uses} 
-						placeholder='Uses'
-					/>
+						placeholder='Uses'>
+					</textarea>
 				</div>
-
+				<br />
 				<div>
-					<label htmlFor='side_effects'>Side Effects:</label>
-					<input 
-						type='textarea'
+					<label htmlFor='side_effects'>Side Effects:</label><br/>
+					<textarea
+						rows='4'
+						columns='70'
 						onChange={this.handleOnChange} 
 						name='side_effects'
 						value={side_effects} 
-						placeholder='Side Effects'
-					/>
+						placeholder='Side Effects'>
+					</textarea>
 				</div>
-
+				<br />
 				<div>
-					<label htmlFor='precautions'>Precautions:</label>
-					<input 
-						type='text' 
+					<label htmlFor='precautions'>Precautions:</label><br />
+					<textarea
+						rows='4'
+						columns='70' 
 						onChange={this.handleOnChange}
 						name='precautions'
 						value={precautions} 
-						placeholder='Precautions'
-					/>
+						placeholder='Precautions'>
+					</textarea>
 				</div>
 				<button type="submit" className="med" >Add Medication</button>
 			</form>
