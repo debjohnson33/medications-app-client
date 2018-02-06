@@ -12,6 +12,13 @@ class MedicationEditForm extends Component {
 		this.props.fetchMedications();
 	}
 
+	componentDidMount() {
+		const allMedications = this.props.medications
+		const currentMedication = this.props.match.params.id
+		const medicationFormData = allMedications.filter(allMedication => allMedication.id === currentMedication)
+		this.props.updateMedicationFormData(medicationFormData)
+	}
+
 
 	handleOnChange = event => {
 		const { name, value } = event.target;
