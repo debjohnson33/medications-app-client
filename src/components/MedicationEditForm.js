@@ -8,6 +8,19 @@ import './Medication.css';
 
 class MedicationEditForm extends Component {
 
+	componentWillMount() {
+		this.props.fetchMedications();
+	}
+
+
+	handleOnChange = event => {
+		const { name, value } = event.target;
+		const currentMedicationFormData = Object.assign({}, this.props.medicationFormData, {
+			[name]: value
+		})
+		this.props.updateMedicationFormData(currentMedicationFormData)
+	}
+
 	render() {
 		<div>
 			{this.props.errors === true ? <FormError /> : null}
