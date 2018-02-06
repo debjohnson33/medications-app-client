@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { updateMedicationFormData } from '../actions/medicationForm';
-import { fetchMedications, editMedications } from '../../actions/medications';
+import { fetchMedications, editMedication } from '../../actions/medications';
 import FormError from './FormError';
 import './Medication.css';
 
@@ -78,8 +78,22 @@ class MedicationEditForm extends Component {
 						value={precautions} >
 					</textarea>
 				</div>
-				<button type="submit" className="med" >Add Medication</button>
+				<button type="submit" className="med" >Update Medication</button>
 			</form>
 			</div>
 	}
 }
+
+const mapStateToProps = state => {
+	return {
+		medications: state.medications,
+		medicationFormData: state.medicationFormData,
+		errors: state.errors
+	}
+}
+ 
+export default connect(mapStateToProps, {
+	updateMedicationFormData, 
+	editMedication,
+	fetchMedications
+})(MedicationEditForm);
