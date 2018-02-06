@@ -92,7 +92,9 @@ export const editMedication = (medicationId, medication) => {
 			.then(medication => {
 				dispatch(updateMedication(medication))
 			})
-			.catch(error => dispatch({type: 'error'})
+			.catch(error => {
+				dispatch({type: 'error'})
+			})
 	}
 }
 
