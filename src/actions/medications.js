@@ -87,11 +87,12 @@ export const editMedication = (medicationId, medication) => {
 			},
 			body: JSON.stringify({ medication: medication })
 		})
-		.then(response => response.json())
-		.then(medication => {
-			dispatch(updateMedication(medication))
-		})
-		.catch(error => console.lot(error))
+			.then(handleErrors)
+			.then(response => response.json())
+			.then(medication => {
+				dispatch(updateMedication(medication))
+			})
+			.catch(error => dispatch({type: 'error'})
 	}
 }
 

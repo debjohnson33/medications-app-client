@@ -22,6 +22,9 @@ class MedicationEditForm extends Component {
 	}
 
 	render() {
+
+		const { name, generic_name, uses, side_effects, precautions } = this.props.medicationFormData;
+
 		<div>
 			{this.props.errors === true ? <FormError /> : null}
 			<h4>Add a Medication to the List</h4>
