@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { updateMedicationFormData } from '../actions/medicationForm';
-import { fetchMedications, editMedication } from '../../actions/medications';
+import { fetchMedications, editMedication } from '../actions/medications';
 import FormError from './FormError';
 import './Medication.css';
 
@@ -14,7 +14,7 @@ class MedicationEditForm extends Component {
 
 	componentDidMount() {
 		const allMedications = this.props.medications
-		const currentMedication = this.props.match.params.id
+		const currentMedication = this.props.medication.id
 		const medicationFormData = allMedications.filter(allMedication => allMedication.id === currentMedication)
 		this.props.updateMedicationFormData(medicationFormData)
 	}
@@ -31,7 +31,7 @@ class MedicationEditForm extends Component {
 	render() {
 
 		const { name, generic_name, uses, side_effects, precautions } = this.props.medicationFormData;
-
+		return(
 		<div>
 			{this.props.errors === true ? <FormError /> : null}
 			<h4>Add a Medication to the List</h4>
@@ -91,6 +91,7 @@ class MedicationEditForm extends Component {
 				<button type="submit" className="med" >Update Medication</button>
 			</form>
 			</div>
+		)
 	}
 }
 
