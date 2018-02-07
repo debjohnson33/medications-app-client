@@ -50,7 +50,7 @@ class Medication extends Component {
 							<p>Name: {medication.name}</p>
 							<p>Generic Name: {medication.generic_name}</p>
 							<p>Uses: {medication.uses}</p>
-							<p>Side Effects: {medication.uses}</p>
+							<p>Side Effects: {medication.side_effects}</p>
 							<p>Precautions: {medication.precautions}</p>
 							<div>
 							<button className="med" onClick={this.toggleHidden.bind(this)}>Click to Edit Medication
