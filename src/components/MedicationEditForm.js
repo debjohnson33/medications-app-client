@@ -39,7 +39,7 @@ class MedicationEditForm extends Component {
 		return(
 		<div>
 			{this.props.errors === true ? <FormError /> : null}
-			<h4>Add a Medication to the List</h4>
+			<h4>Edit this Medication</h4>
 			<form onSubmit={this.handleOnSubmit}>
 				<div>
 					<label htmlFor='name'>Name:</label>
@@ -70,6 +70,7 @@ class MedicationEditForm extends Component {
 						columns='70' 
 						onChange={this.handleOnChange}
 						name='uses'
+						type='text'
 						value={uses} 
 						placeholder={this.props.medication.uses}
 					>
@@ -83,6 +84,7 @@ class MedicationEditForm extends Component {
 						columns='70'
 						onChange={this.handleOnChange} 
 						name='side_effects'
+						type='text'
 						value={side_effects} 
 						placeholder={this.props.medication.side_effects}
 					>
@@ -96,6 +98,7 @@ class MedicationEditForm extends Component {
 						columns='70' 
 						onChange={this.handleOnChange}
 						name='precautions'
+						type='text'
 						value={precautions} 
 						placeholder={this.props.medication.precautions}
 					>
