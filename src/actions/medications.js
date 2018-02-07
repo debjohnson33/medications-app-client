@@ -91,6 +91,7 @@ export const editMedication = (medicationId, medication) => {
 			.then(response => response.json())
 			.then(medication => {
 				dispatch(updateMedication(medication))
+				dispatch(resetMedicationForm)
 			})
 			.catch(error => {
 				dispatch({type: 'error'})

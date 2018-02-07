@@ -28,6 +28,11 @@ class MedicationEditForm extends Component {
 		this.props.updateMedicationFormData(currentMedicationFormData)
 	}
 
+	handleOnSubmit = event => {
+		event.preventDefault();
+		this.props.editMedication(this.props.medicationFormData);
+	}
+
 	render() {
 
 		const { name, generic_name, uses, side_effects, precautions } = this.props.medicationFormData;
