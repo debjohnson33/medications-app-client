@@ -27,7 +27,7 @@ const Navbar = () =>
 		>Medications</NavLink>
 
 		<NavLink
-		to='/about'
+		to='/medications/about'
 		exact
 		style={link}
 		>About</NavLink>

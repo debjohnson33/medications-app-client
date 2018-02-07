@@ -21,10 +21,10 @@ class App extends Component {
 	      	<Switch>
 	      		<Route exact path='/' component={Home}/>
 	      		<Route exact path='/medications/new' component={MedicationForm}/>
+	      		<Route exact path='/medications/about' component={About}/>
 	      		<Route exact path='/medications/:id' component={Medication}/>
 	      		<Route exact path='/medications/:id/reviews' component={ReviewForm}/>
 	      		<Route exact path='/medications' component={MedicationsPage}/>
-	      		<Route exact path='/medications/about' component={About}/>
 	      	</Switch>
 	      	<Footer />
 	      </div>
