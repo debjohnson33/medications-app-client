@@ -7,8 +7,6 @@ const Footer = () => {
 	return (
 		<div>
 			<footer>
-			<br />
-			<br />
 				<div className="row">
 					<div className="col-4">
 						<h3>About Medications App</h3>
@@ -17,8 +15,7 @@ const Footer = () => {
 					<div className="col-4">
 						<h3>External Links</h3>
 						<a target="_blank" href="https://www.medicinenet.com/medications/article.htm" rel="noopener noreferrer" alt="Medicine Net Medication Index">Medicine Net Medication Index</a><br />
-						<a target="_blank" href="https://www.rxlist.com/" rel="noopener noreferrer">RxList</a>
-						
+						<a target="_blank" href="https://www.rxlist.com/" rel="noopener noreferrer">RxList</a>	
 					</div>
 					<div className="col-4">
 						<h3>Contact Us</h3>
