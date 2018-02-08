@@ -47,7 +47,7 @@ class MedicationEditForm extends Component {
 						type='text'
 						onChange={this.handleOnChange}
 						name='name' 
-						value={name} 
+						value={name || ''} 
 						placeholder={this.props.medication.name}
 					/>
 				</div>
@@ -58,7 +58,7 @@ class MedicationEditForm extends Component {
 						type='text' 
 						onChange={this.handleOnChange}
 						name='generic_name'
-						value={generic_name}
+						value={generic_name || ''}
 						placeholder={this.props.medication.generic_name} 
 					/>
 				</div>
@@ -71,7 +71,7 @@ class MedicationEditForm extends Component {
 						onChange={this.handleOnChange}
 						name='uses'
 						type='text'
-						value={uses} 
+						value={uses || ''} 
 						placeholder={this.props.medication.uses}
 					>
 					</textarea>
@@ -85,7 +85,7 @@ class MedicationEditForm extends Component {
 						onChange={this.handleOnChange} 
 						name='side_effects'
 						type='text'
-						value={side_effects} 
+						value={side_effects || ''} 
 						placeholder={this.props.medication.side_effects}
 					>
 					</textarea>
@@ -99,7 +99,7 @@ class MedicationEditForm extends Component {
 						onChange={this.handleOnChange}
 						name='precautions'
 						type='text'
-						value={precautions} 
+						value={precautions || ''} 
 						placeholder={this.props.medication.precautions}
 					>
 					</textarea>
