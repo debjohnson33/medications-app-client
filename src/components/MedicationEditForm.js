@@ -30,7 +30,7 @@ class MedicationEditForm extends Component {
 
 	handleOnSubmit = event => {
 		event.preventDefault();
-		//this.props.editMedication(this.props.medicationFormData);
+		this.props.editMedication(this.props.medication.id, this.props.medicationFormData);
 	}
 
 	render() {
