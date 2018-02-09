@@ -11,7 +11,7 @@ export default (state = [], action) => {
 			return state.map(
 				medication => 
 					medication.id === action.medicationId 
-						? Object.assign({}, ...medication, action.medication)
+						? Object.assign({}, medication, action.medication)
 						: medication
 			);
 		default:
