@@ -40,7 +40,7 @@ class MedicationEditForm extends Component {
 		<div>
 			{this.props.errors === true ? <FormError /> : null}
 			<h4>Edit this Medication</h4>
-			<form onSubmit={this.handleOnSubmit}>
+			<form onSubmit={event => this.handleOnSubmit(event)}>
 				<div>
 					<label htmlFor='name'>Name:</label>
 					<input 

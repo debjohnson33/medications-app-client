@@ -8,13 +8,12 @@ export default (state = [], action) => {
 			state.splice(action.medicationId, 1)
 			return state;
 		case 'UPDATE_MEDICATION_SUCCESS':
-			const newMedicationState = state.map(
+			return state.map(
 				medication => 
 					medication.id === action.medicationId 
 						? Object.assign({}, ...medication, action.medication)
 						: medication
-			)
-			return newMedicationState;
+			);
 		default:
 			return state;
 	}
