@@ -94,7 +94,7 @@ export const editMedication = (medicationId, medication) => {
 				dispatch(resetMedicationForm)
 			})
 			.catch(error => {
-				dispatch({type: 'error'})
+				console.log(error)
 			})
 	}
 }
