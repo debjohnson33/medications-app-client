@@ -7,13 +7,6 @@ export default (state = [], action) => {
 		case 'DELETE_MEDICATION_SUCCESS':
 			state.splice(action.medicationId, 1)
 			return state;
-		case 'UPDATE_MEDICATION_SUCCESS':
-			return state.map(
-				medication => 
-					medication.id === action.medicationId 
-						? Object.assign({}, medication, action.medication)
-						: medication
-			);
 		default:
 			return state;
 	}

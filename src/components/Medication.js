@@ -3,26 +3,13 @@ import { connect } from 'react-redux';
 
 import { fetchMedications, deleteMedication } from '../actions/medications';
 import { fetchReviews } from '../actions/reviews';
-import MedicationEditForm from './MedicationEditForm';
+
 import Reviews from './Reviews';
 import ReviewForm from './ReviewForm';
 import './Medication.css';
 import '../containers/medicationsPage.css';
 
 class Medication extends Component {
-
-	constructor () {
-		super()
-		this.state = {
-			isHidden: true
-		}
-	}
-
-	toggleHidden () {
-		this.setState({
-			isHidden: !this.state.isHidden
-		})
-	}
 
 	componentDidMount() {
 		if (this.props.medications.length === 0) {
@@ -53,9 +40,6 @@ class Medication extends Component {
 							<p>Side Effects: {medication.side_effects}</p>
 							<p>Precautions: {medication.precautions}</p>
 							<div>
-							<button className="med" onClick={this.toggleHidden.bind(this)}>Click to Edit Medication
-							</button>
-							{!this.state.isHidden && <MedicationEditForm medication={medication}/>}
 							<br /><br />
 							</div>
 							<button className="med" onClick={this.handleOnDelete}>Delete Medication</button><br /><br />

@@ -25,13 +25,6 @@ export const destroyMedication = medicationId => {
 	}
 }
 
-export const updateMedication = medicationFormData => {
-	return {
-		type: 'UPDATE_MEDICATION_SUCCESS',
-		medicationFormData
-	}
-}
-
 export const fetchMedications = () => {
 	return dispatch => {
 		return fetch(`${API_URL}/medications`)
@@ -77,25 +70,3 @@ export const deleteMedication = (medicationId) => {
 			.catch(error => console.log(error))
 	}
 }
-
-export const editMedication = (medicationId, medication) => {
-	return dispatch => {
-		return fetch(`${API_URL}/medications/${medicationId}`, {
-			method: 'PATCH',
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({ medication: medication })
-		})
-			.then(handleErrors)
-			.then(response => response.json())
-			.then(medication => {
-				dispatch(updateMedication(medication))
-				dispatch(resetMedicationForm)
-			})
-			.catch(error => {
-				console.log(error)
-			})
-	}
-}
-
