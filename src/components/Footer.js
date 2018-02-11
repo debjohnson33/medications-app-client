@@ -12,13 +12,14 @@ const Footer = () => {
 						<div className="box">
 							<h3>About Medications App</h3>
 							<Link to={`/medications/about`}>About</Link>
+							<p>More Links Pending</p>
 						</div>
 					</div>
 					<div className="col-4">
 						<div className="box">
 							<h3>External Links</h3>
 							<a target="_blank" href="https://www.medicinenet.com/medications/article.htm" rel="noopener noreferrer" alt="Medicine Net Medication Index">Medicine Net Medication Index</a><br />
-							<a target="_blank" href="https://www.rxlist.com/" rel="noopener noreferrer">RxList</a>	
+							<p>More Links Pending</p>
 						</div>
 					</div>
 					<div className="col-4">
