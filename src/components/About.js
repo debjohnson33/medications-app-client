@@ -9,6 +9,25 @@ const About = (props) => {
 	        </header>
 	        <p id="appInfo">This app is intended as informative only and should not be used as medical advice.
 	         Talk to your doctor for any problems you may be having.</p>
+	        <p id="appInfo">This is an open sourced project, so if you would like to contribute to this project, please go to 
+	        my <a href="" target="_blank" rel="noopener noreferrer">Github Page</a></p>
+	        <p id="appInfo">Created by Deb Johnson as a project for Flatiron School</p>
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
 		</div>
 	)
 }
