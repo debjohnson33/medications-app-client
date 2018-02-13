@@ -5,8 +5,7 @@ export default (state = [], action) => {
 		case 'ADD_MEDICATION_SUCCESS':
 			return state.concat(action.medication)
 		case 'DELETE_MEDICATION_SUCCESS':
-			state.splice(action.medicationId, 1)
-			return state;
+			return state.filter(medication => medication.id != action.medicationId);
 		default:
 			return state;
 	}
