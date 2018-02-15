@@ -70,3 +70,21 @@ export const deleteMedication = (medicationId) => {
 			.catch(error => console.log(error))
 	}
 }
+
+export const addLike = (id, value) => {
+	return dispatch => {
+		return fetch(`/api/medications/${id}.json`, {
+			method: 'PUT',
+			headers: {
+				'Accept': 'application/json',
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({medication: {likes: value}}),
+		})
+		.then(response => response.json())
+		.then(medication => {
+			dispatch({type: 'ADD_LIKE', id});
+		})
+		.catch(error => console.log(error))
+	}
+}
