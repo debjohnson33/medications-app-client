@@ -8,27 +8,10 @@ import './medicationsPage.css'
 
 class MedicationsPage extends Component {
 
-	constructor(props) {
-		super(props)
-
-		this.state = {
-			counter: 0
-		}
-
-		this.addLike = this.addLike.bind(this)
-	}
-
 	componentDidMount() {
 		if (this.props.medications.length === 0) {
 			this.props.fetchMedications();
 		}
-	}
-
-	addLike() {
-		console.log('Like');
-		this.setState ({
-			counter: this.state.counter + 1
-		})
 	}
 
 	render() {
@@ -47,7 +30,7 @@ class MedicationsPage extends Component {
 			<div className="row">
 				<div className="col-6" id="medList">
 					<h3>Medications</h3>
-					<MedicationsList addLike={this.addLike} medications={sortedMedications} counter={this.state.counter}/>
+					<MedicationsList medications={sortedMedications} />
 				</div>	
 				<div className="col-6" id="medForm">
 					<MedicationForm />
