@@ -1,23 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { addLike } from '../actions/medications';
 
 class MedicationLI extends Component {
 
-	constructor(props) {
-		super(props)
-
-		this.state = {
-			counter: 0
-		}
-
-		this.addLike = this.addLike.bind(this)
-	}
-
-	addLike() {
+	handleAddLike() {
 		console.log('Like');
-		this.setState ({
-			counter: this.state.counter + 1
-		})
+		this.props.addLike(this.props.medication.id, this.props.medication.likes + 1)
 	}
 
 	render() {
@@ -30,7 +20,7 @@ class MedicationLI extends Component {
 				to={`/medications/${medication.id}`} 
 			>{medication.name}
 			</Link> - {medication.generic_name}
-			<button onClick={this.addLike}>Like</button>{this.state.counter}
+			<button onClick={this.handleAddLike}>Like</button>{this.state.counter}
 			</p>
 
 
@@ -38,4 +28,4 @@ class MedicationLI extends Component {
 	}
 }
 
-export default MedicationLI;
+export default connect(null, { addLike }(MedicationLI);
