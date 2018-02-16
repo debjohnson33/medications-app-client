@@ -5,8 +5,7 @@ import { addLike } from '../actions/medications';
 
 class MedicationLI extends Component {
 
-	handleAddLike() {
-		console.log('Like');
+	handleAddLike = () => {
 		this.props.addLike(this.props.medication.id, this.props.medication.likes + 1)
 	}
 
@@ -15,12 +14,12 @@ class MedicationLI extends Component {
 	
 		return (
 
-			<p key={medication.id} > <Link
+			<p key={medication.id}><Link
 				key={medication.id} 
 				to={`/medications/${medication.id}`} 
 			>{medication.name}
 			</Link> - {medication.generic_name}
-			<button onClick={this.handleAddLike}>Like</button>{this.state.counter}
+			<button onClick={this.handleAddLike}>Like</button>{medication.likes}
 			</p>
 
 
@@ -28,4 +27,4 @@ class MedicationLI extends Component {
 	}
 }
 
-export default connect(null, { addLike }(MedicationLI);
+export default connect(null, { addLike })(MedicationLI);

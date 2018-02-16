@@ -73,7 +73,7 @@ export const deleteMedication = (medicationId) => {
 
 export const addLike = (id, value) => {
 	return dispatch => {
-		return fetch(`/api/medications/${id}.json`, {
+		return fetch(`${API_URL}/medications/${id}.json`, {
 			method: 'PUT',
 			headers: {
 				'Accept': 'application/json',

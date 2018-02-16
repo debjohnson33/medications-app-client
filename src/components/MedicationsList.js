@@ -1,14 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import MedicationLI from '../components/MedicationLI';
 
 const MedicationsList = ({ medications }) => (
 	<div>
 		{medications.map(medication => 
-			<p key={medication.id}><Link 
-				key={medication.id}
-				to={`/medications/${medication.id}`} 
-			>{medication.name}
-			</Link> - {medication.generic_name}</p>
+			<MedicationLI medication={medication} key={medication.id}/>
 		)}
 	</div>
 );
