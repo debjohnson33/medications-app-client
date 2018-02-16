@@ -5,7 +5,11 @@ export default (state = [], action) => {
 		case 'ADD_MEDICATION_SUCCESS':
 			return state.concat(action.medication)
 		case 'DELETE_MEDICATION_SUCCESS':
-			return state.filter(medication => medication.id !== action.medicationId);
+			//return state.filter(medication => medication.id !== action.medicationId);
+			return [
+				...state,
+				state.medications.filter(medication => medication.id !== action.medicationId)
+			]
 		case 'ADD_LIKE':
 			let index = state.findIndex(medication => medication.id === action.id);
 			let medication = state[index];
