@@ -21,8 +21,6 @@ class MedicationLI extends Component {
 			</Link> - {medication.generic_name}
 			<button onClick={this.handleAddLike}>Like</button>{medication.likes}
 			</p>
-
-
 		)
 	}
 }
