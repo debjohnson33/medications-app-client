@@ -16,15 +16,7 @@ class MedicationsPage extends Component {
 
 	render() {
 		const sortedMedications = this.props.medications.sort(function(a, b) {
-    		let nameA = a.name.toUpperCase();
-    		let nameB = b.name.toUpperCase();
-    		if (nameA < nameB) {
-        		return -1; 
-        	}
-    		if (nameA > nameB) {
-        		return 1; 
-        	}
-    			return 0; 
+    		return b.likes - a.likes 
     		});
 		return (
 			<div className="row">
