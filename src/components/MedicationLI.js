@@ -10,7 +10,7 @@ class MedicationLI extends Component {
 			counter: 0
 		}
 
-		this.addLike = this.addLike.bind(this)
+	this.addLike = this.addLike.bind(this)
 	}
 
 	addLike() {
